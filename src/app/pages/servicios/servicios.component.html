@@ -1,0 +1,70 @@
+<main class="services-body" [style.background-color]="backgroundColor()">
+  <div
+    class="services-container"
+    [ngStyle]="{ color: linksColor }"
+    *ngFor="let service of servicesContent; let i = index"
+  >
+    <div class="services-main-info">
+      <div class="services-titles">
+        <h1
+          class="title"
+          [ngStyle]="{
+            color: serviceColor(i),
+            opacity: isAnimationCurrentIndex(i) ? 1 : 0
+          }"
+        >
+          {{ service.title }}
+        </h1>
+
+        <div class="subtitle">
+          <h2 [ngStyle]="{ opacity: isCurrentIndex(i) ? 1 : 0 }">Servicio</h2>
+          <p
+            class="number"
+            [ngStyle]="{
+              color: serviceColor(i),
+              opacity: isAnimationCurrentIndex(i) ? 1 : 0
+            }"
+          >
+            ▬ 0{{ i + 1 }}
+          </p>
+        </div>
+      </div>
+
+      <app-circle [ngClass]="{ hidden: !isCurrentIndex(i) }">
+          <div class="services-icon">
+            <div
+              class="services-svg"
+              [ngClass]="{ hidden: !isCurrentIndex(i) }"
+              [innerHTML]="service.icon | safeHtml"
+            ></div>
+          </div>
+      </app-circle>
+
+
+      <ul class="services-services" [ngClass]="{ hidden: !isCurrentIndex(i) }">
+        <li *ngFor="let element of service.listElements">{{ element }}</li>
+      </ul>
+    </div>
+
+    <div class="services-desc" [ngClass]="{ hidden: !isCurrentIndex(i) }">
+      <h1 *ngFor="let element of service.descElements" class="services-desc-h1">
+        <span>{{ element.descBold }}</span> {{ element.desc }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="markers">
+    <span
+      *ngFor="let i of markers(); let index = index"
+      class="marker"
+      [ngClass]="{
+        'current-marker': isCurrentIndex(index),
+        selectable: !isTransitioning && !isCurrentIndex(index)
+      }"
+      [ngStyle]="{
+        'background-color': isCurrentIndex(index) ? linksColor : markerColor()
+      }"
+      (click)="manualChange(index)"
+    ></span>
+  </div>
+</main>

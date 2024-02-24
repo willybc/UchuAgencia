@@ -1,0 +1,38 @@
+<div class="links">
+  <div class="follow">
+    <p
+      class="follow-popup"
+      [ngClass]="{
+        'follow-appear': showFollow,
+        'follow-disappear': !showFollow && showFollow != null,
+        selectable: showFollow
+      }"
+      [style.color]="leftColor"
+    >
+      <a target="_blank" [href]="goToIGPage()">IG</a> <span class="follow-separator"> | </span> <a target="_blank" [href]="goToLNPage()">LN</a>
+    </p>
+    <p
+      class="follow-title selectable"
+      [style.color]="leftColor"
+      (click)="toggleFollowPopup()"
+    >
+      Follow
+    </p>
+  </div>
+  <div class="hello">
+    <p
+      class="hello-popup"
+      [ngClass]="{ 'hello-alert': showHello }"
+      [style.color]="rightColor"
+    >
+      e-mail copiado
+    </p>
+    <p
+      class="hello-title selectable"
+      [style.color]="rightColor"
+      (click)="helloPopup()"
+    >
+      Hello!
+    </p>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<main class="circle-container">
+  <div class="main-circle">
+    <div
+      class="circle top"
+      [ngStyle]="{ 'background-color': filledColor(0), 'border-color': filled }"
+      [ngClass]="{
+        selectable: !isTransitioning && !isCurrentIndex(0),
+        'filled-transition': isCurrentIndex(0),
+        filled: isCurrentIndex(0)
+      }"
+      (click)="onClick(0)"
+    ></div>
+    <div
+      class="circle right"
+      [ngStyle]="{ 'background-color': filledColor(1), 'border-color': filled }"
+      [ngClass]="{
+        selectable: !isTransitioning && !isCurrentIndex(1),
+        'filled-transition': isCurrentIndex(1),
+        filled: isCurrentIndex(1)
+      }"
+      (click)="onClick(1)"
+    ></div>
+    <div
+      class="circle bottom"
+      [ngStyle]="{ 'background-color': filledColor(2), 'border-color': filled }"
+      [ngClass]="{
+        selectable: !isTransitioning && !isCurrentIndex(2),
+        'filled-transition': isCurrentIndex(2),
+        filled: isCurrentIndex(2)
+      }"
+      (click)="onClick(2)"
+    ></div>
+    <div
+      class="circle left"
+      [ngStyle]="{ 'background-color': filledColor(3), 'border-color': filled }"
+      [ngClass]="{
+        selectable: !isTransitioning && !isCurrentIndex(3),
+        'filled-transition': isCurrentIndex(3),
+        filled: isCurrentIndex(3)
+      }"
+      (click)="onClick(3)"
+    ></div>
+  </div>
+
+ 
+  <svg viewBox="0 0 400 400" class="morph">
+    <g>
+      <path
+        id="outer"
+        d="M400 200C400 310.454 310.397 400 200 400C89.6026 400 0 310.454 0 200C0 89.5462 75.827 3.43462e-05 200 0C324.173 -3.43462e-05 400 89.5462 400 200Z"
+        [style.fill]="outerColor()"
+      ></path>
+      <path
+        id="inner"
+        d="M298.009 298.593C241.203 355.403 145.841 343.087 89.0562 286.277C32.2508 229.487 55.393 192.66 82.3684 119.945C106 39.5 224.728 53.7957 289.261 101.634C369.413 161.054 354.814 241.783 298.009 298.593Z"
+        [style.fill]="innerColor()"
+      ></path>
+    </g>
+  </svg>
+  <div class="projected-content">
+    <ng-content></ng-content>
+  </div>
+</main>

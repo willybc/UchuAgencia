@@ -1,0 +1,65 @@
+:root {
+  --primary-dark: #050000;
+  --primary-light: #fffaf3;
+  --rose: #ffb5f9;
+  --esmerald: #00a698;
+  --yellow: #ffd44c;
+  --blue: #2974ed;
+  --orange: #ff6348;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "FuturaStd";
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+}
+
+.selectable {
+  pointer-events: all !important;
+  cursor: pointer !important;
+}
+
+// FONTS
+
+@font-face {
+  font-family: "FuturaStd";
+  src: url("assets/fonts/Futura Std Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "FuturaStd";
+  src: url("assets/fonts/Futura Std Medium.otf") format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "FuturaStd";
+  src: url("assets/fonts/Futura Std Book.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "FuturaStd";
+  src: url("assets/fonts/Futura Std Light.otf") format("opentype");
+  font-weight: 300;
+}
