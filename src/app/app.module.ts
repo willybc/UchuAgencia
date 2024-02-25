@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -21,6 +21,12 @@ import { CircleComponent } from './components/circle/circle.component';
 import { ServiciosNavComponent } from './pages/servicios-nav/servicios-nav.component';
 import { SafeHtmlPipe } from './utils/safe-html.pipe';
 import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mobile.component';
+import { ConfigService } from './services/config.service';
+import { LoaderComponent } from './components/loader/loader.component';
+
+export function LoadConfiguration(configService: ConfigService) {
+  return () => configService.load();
+}
 
 @NgModule({
   declarations: [
@@ -38,9 +44,18 @@ import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mob
     ServiciosNavComponent,
     SafeHtmlPipe,
     ServiciosMobileComponent,
+    LoaderComponent
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
+  providers: [
+    ConfigService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: LoadConfiguration,
+      deps: [ConfigService],
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
