@@ -1,235 +1,235 @@
 // CONTAINERS
 
 .services-body {
-  width: 100vw;
-  height: 100vh;
-  transition: background-color 1s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.6vw;
+	width: 100vw;
+	height: 100vh;
+	transition: background-color 1s ease;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 0.6vw;
 }
 
 .services-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
 }
 
 .services-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 .hidden {
-  opacity: 0;
+	opacity: 0;
 }
 
 // MARKERS
 
 .markers {
-  margin-bottom: 6.5em;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  pointer-events: none;
+	margin-bottom: 6.5em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	pointer-events: none;
 }
 
 .current-marker {
-  width: 8em !important;
-  height: 6px;
-  cursor: default !important;
+	width: 8em !important;
+	height: 6px;
+	cursor: default !important;
 }
 
 .marker {
-  width: 4em;
-  height: 1.5em;
-  border-radius: 2px;
+	width: 4em;
+	height: 1.5em;
+	border-radius: 2px;
 }
 
 // CONTENT
 
 .services-main-info {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 7%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 7%;
 }
 
 .services-main-info > * {
-  width: 38em;
+	width: 38em;
 }
 
 .services-titles {
-  text-align: right;
+	text-align: right;
 }
 
 .title {
-  font-size: 4.5em;
-  font-weight: 700;
+	font-size: 4.5em;
+	font-weight: 700;
 }
 
 .subtitle {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .subtitle h2 {
-  font-size: 3em;
-  font-weight: 400;
+	font-size: 3em;
+	font-weight: 400;
 }
 
 .number {
-  margin-left: 1rem;
-  font-size: 3em;
-  font-weight: 700;
-  opacity: 0;
+	margin-left: 1rem;
+	font-size: 3em;
+	font-weight: 700;
+	opacity: 0;
 }
 
 .services-services {
-  list-style: none;
-  margin-left: 0;
+	list-style: none;
+	margin-left: 0;
 }
 
 .services-services li {
-  font-size: 2.5em;
-  font-weight: 400;
+	font-size: 2.5em;
+	font-weight: 400;
 }
 
 .services-services li:not(:last-child) {
-  margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 .services-desc {
-  position: absolute;
-  left: 0;
-  bottom: 15%;
-  font-weight: 500;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  height: 5.5em;
-  overflow: hidden;
+	position: absolute;
+	left: 0;
+	bottom: 15%;
+	font-weight: 500;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	height: 5.5em;
+	overflow: hidden;
 }
 
 .services-desc-h1 {
-  font-size: 4em;
+	font-size: 4em;
 }
 
 .services-desc span {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .services-icon {
-  width: 50em !important;
-  max-width: none !important;
-  height: 20em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 50em !important;
+	max-width: none !important;
+	height: 20em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .services-svg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
 @media screen and (max-width: 1023px) {
-  .markers {
-    margin-bottom: 4.3rem;
-  }
+	.markers {
+		margin-bottom: 4.3rem;
+	}
 
-  .marker {
-    width: 8em;
-    height: 1rem;
-  }
+	.marker {
+		width: 8em;
+		height: 1rem;
+	}
 
-  .current-marker {
-    width: 16em !important;
-  }
+	.current-marker {
+		width: 16em !important;
+	}
 
-  .services-main-info {
-    flex-direction: column;
-    justify-content: space-between;
-    height: 120vw;
-    gap: 6rem;
-  }
+	.services-main-info {
+		flex-direction: column;
+		justify-content: space-between;
+		height: 120vw;
+		gap: 6rem;
+	}
 
-  .services-desc {
-    height: 2.3rem;
-    bottom: 12%;
-  }
+	.services-desc {
+		height: 2.3rem;
+		bottom: 12%;
+	}
 
-  .services-desc-h1 {
-    font-size: 2rem;
-  }
+	.services-desc-h1 {
+		font-size: 2rem;
+	}
 
-  .services-icon {
-    margin: auto;
-    width: 70% !important;
-    height: 100%;
-  }
+	.services-icon {
+		margin: auto;
+		width: 70% !important;
+		height: 100%;
+	}
 
-  .services-svg {
-    width: 50% !important;
-    height: auto;
-  }
+	.services-svg {
+		width: 50% !important;
+		height: auto;
+	}
 
-  .services-main-info > * {
-    width: auto;
-  }
+	.services-main-info > * {
+		width: auto;
+	}
 
-  .services-titles {
-    width: 60% !important;
-  }
+	.services-titles {
+		width: 60% !important;
+	}
 
-  .title {
-    font-size: 3rem;
-    text-align: center;
-  }
+	.title {
+		font-size: 3rem;
+		text-align: center;
+	}
 
-  .subtitle {
-    justify-content: center;
-  }
+	.subtitle {
+		justify-content: center;
+	}
 
-  .subtitle h2,
-  .number {
-    font-size: 2rem;
-  }
+	.subtitle h2,
+	.number {
+		font-size: 2rem;
+	}
 
-  .services-services {
-    width: 90% !important;
-  }
+	.services-services {
+		width: 90% !important;
+	}
 
-  .services-services li {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+	.services-services li {
+		font-size: 1.5rem;
+		text-align: center;
+	}
 
-  .services-services li:not(:last-child) {
-    margin-bottom: 0.7rem;
-  }
+	.services-services li:not(:last-child) {
+		margin-bottom: 0.7rem;
+	}
 }
 
 @media screen and (max-width: 378px) {
-  .services-main-info {
-    margin-bottom: 6rem;
-  }
+	.services-main-info {
+		margin-bottom: 6rem;
+	}
 }

@@ -3,30 +3,30 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { PrimaryColor } from 'src/app/utils/color';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class CircleService {
-  // CIRCLES
-  private changeCircle = new BehaviorSubject<{
-    filled: PrimaryColor;
-    m: number;
-  }>({
-    filled: PrimaryColor.Light,
-    m: 0,
-  });
+	// CIRCLES
+	private changeCircle = new BehaviorSubject<{
+		filled: PrimaryColor;
+		m: number;
+	}>({
+		filled: PrimaryColor.Light,
+		m: 0,
+	});
 
-  setProperties(filled: PrimaryColor, m: number) {
-    this.changeCircle.next({ filled, m });
-  }
+	setProperties(filled: PrimaryColor, m: number) {
+		this.changeCircle.next({ filled, m });
+	}
 
-  changeCircle$ = this.changeCircle.asObservable();
+	changeCircle$ = this.changeCircle.asObservable();
 
-  // SECTIONS
-  private serviceSection = new Subject<number>();
+	// SECTIONS
+	private serviceSection = new Subject<number>();
 
-  setServiceSection(index: number) {
-    this.serviceSection.next(index);
-  }
+	setServiceSection(index: number) {
+		this.serviceSection.next(index);
+	}
 
-  serviceSection$ = this.serviceSection.asObservable();
+	serviceSection$ = this.serviceSection.asObservable();
 }

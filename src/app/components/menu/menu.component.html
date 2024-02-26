@@ -1,65 +1,62 @@
 <div
-  class="menu-btn"
-  (click)="toggleMenu()"
-  [ngClass]="{ selectable: !isTransitioning }"
->
-  <div id="menu-btn-icon">
-    <span [style.backgroundColor]="spanColor"></span>
-    <span [style.backgroundColor]="spanColor"></span>
-    <span [style.backgroundColor]="spanColor"></span>
-    <span [style.backgroundColor]="spanColor"></span>
-  </div>
+	class="menu-btn"
+	(click)="toggleMenu()"
+	[ngClass]="{ selectable: !isTransitioning }">
+	<div id="menu-btn-icon">
+		<span [style.backgroundColor]="spanColor"></span>
+		<span [style.backgroundColor]="spanColor"></span>
+		<span [style.backgroundColor]="spanColor"></span>
+		<span [style.backgroundColor]="spanColor"></span>
+	</div>
 </div>
 
 <div class="wave-card-left" id="left-card">
-  <div class="card-left" id="left-card-content">
-    <h2>Contacto</h2>
-    <h1>hello@xxx.com</h1>
-    <p>INSTAGRAM • LINKEDIN</p>
-    <!-- <img [src]="whatsapp" alt="WhatsApp" class="whatsapp" /> -->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="70"
-      height="70"
-      viewBox="0 0 70 70"
-      fill="none"
-      class="whatsapp"
-    >
-      <path
-        d="M59.799 10.1852C56.5741 6.94393 52.7328 4.37403 48.4992 2.62538C44.2657 0.876726 39.7245 -0.0156804 35.1407 0.000208493C15.9347 0.000208493 0.281408 15.5752 0.281408 34.6851C0.281408 40.8101 1.8995 46.7601 4.92462 52.0101L0 70L18.4673 65.17C23.5678 67.935 29.3015 69.405 35.1407 69.405C54.3467 69.405 70 53.8301 70 34.7201C70 25.4451 66.3769 16.7302 59.799 10.1852ZM35.1407 63.525C29.9347 63.525 24.8342 62.125 20.3668 59.5L19.3116 58.87L8.33668 61.74L11.2563 51.1001L10.5528 50.0151C7.66041 45.4195 6.12461 40.1074 6.1206 34.6851C6.1206 18.7952 19.1357 5.84519 35.1055 5.84519C42.8442 5.84519 50.1256 8.85518 55.5779 14.3152C58.2776 16.989 60.417 20.1695 61.8722 23.6721C63.3274 27.1748 64.0695 30.93 64.0553 34.7201C64.1256 50.6101 51.1105 63.525 35.1407 63.525ZM51.0402 41.9651C50.1608 41.5451 45.8693 39.4451 45.0955 39.1301C44.2864 38.8501 43.7236 38.7101 43.1256 39.5501C42.5276 40.4251 40.8744 42.3851 40.3819 42.9451C39.8894 43.5401 39.3618 43.6101 38.4824 43.1551C37.603 42.7351 34.7889 41.7901 31.4824 38.8501C28.8794 36.5401 27.1558 33.7051 26.6281 32.8301C26.1357 31.9551 26.5578 31.5001 27.0151 31.0451C27.402 30.6601 27.8945 30.0301 28.3166 29.5401C28.7387 29.0501 28.9146 28.6651 29.196 28.1051C29.4774 27.5101 29.3367 27.0201 29.1256 26.6001C28.9146 26.1801 27.1558 21.9101 26.4523 20.1602C25.7487 18.4802 25.01 18.6902 24.4824 18.6552H22.794C22.196 18.6552 21.2814 18.8652 20.4724 19.7402C19.6985 20.6151 17.4472 22.7151 17.4472 26.9851C17.4472 31.2551 20.5779 35.3851 21 35.9451C21.4221 36.5401 27.1558 45.2901 35.8794 49.0351C37.9548 49.9451 39.5729 50.4701 40.8392 50.8551C42.9146 51.5201 44.8141 51.4151 46.3266 51.2051C48.0151 50.9601 51.4975 49.1051 52.201 47.0751C52.9397 45.0451 52.9397 43.3301 52.6935 42.9451C52.4472 42.5601 51.9196 42.3851 51.0402 41.9651Z"
-        fill="black"
-      />
-    </svg>
-  </div>
+	<div class="card-left" id="left-card-content">
+		<h2>Contacto</h2>
+		<h1>hello"&#64;"gmail.com</h1>
+		<p>INSTAGRAM • LINKEDIN</p>
+		<!-- <img [src]="whatsapp" alt="WhatsApp" class="whatsapp" /> -->
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="70"
+			height="70"
+			viewBox="0 0 70 70"
+			fill="none"
+			class="whatsapp">
+			<path
+				d="M59.799 10.1852C56.5741 6.94393 52.7328 4.37403 48.4992 2.62538C44.2657 0.876726 39.7245 -0.0156804 35.1407 0.000208493C15.9347 0.000208493 0.281408 15.5752 0.281408 34.6851C0.281408 40.8101 1.8995 46.7601 4.92462 52.0101L0 70L18.4673 65.17C23.5678 67.935 29.3015 69.405 35.1407 69.405C54.3467 69.405 70 53.8301 70 34.7201C70 25.4451 66.3769 16.7302 59.799 10.1852ZM35.1407 63.525C29.9347 63.525 24.8342 62.125 20.3668 59.5L19.3116 58.87L8.33668 61.74L11.2563 51.1001L10.5528 50.0151C7.66041 45.4195 6.12461 40.1074 6.1206 34.6851C6.1206 18.7952 19.1357 5.84519 35.1055 5.84519C42.8442 5.84519 50.1256 8.85518 55.5779 14.3152C58.2776 16.989 60.417 20.1695 61.8722 23.6721C63.3274 27.1748 64.0695 30.93 64.0553 34.7201C64.1256 50.6101 51.1105 63.525 35.1407 63.525ZM51.0402 41.9651C50.1608 41.5451 45.8693 39.4451 45.0955 39.1301C44.2864 38.8501 43.7236 38.7101 43.1256 39.5501C42.5276 40.4251 40.8744 42.3851 40.3819 42.9451C39.8894 43.5401 39.3618 43.6101 38.4824 43.1551C37.603 42.7351 34.7889 41.7901 31.4824 38.8501C28.8794 36.5401 27.1558 33.7051 26.6281 32.8301C26.1357 31.9551 26.5578 31.5001 27.0151 31.0451C27.402 30.6601 27.8945 30.0301 28.3166 29.5401C28.7387 29.0501 28.9146 28.6651 29.196 28.1051C29.4774 27.5101 29.3367 27.0201 29.1256 26.6001C28.9146 26.1801 27.1558 21.9101 26.4523 20.1602C25.7487 18.4802 25.01 18.6902 24.4824 18.6552H22.794C22.196 18.6552 21.2814 18.8652 20.4724 19.7402C19.6985 20.6151 17.4472 22.7151 17.4472 26.9851C17.4472 31.2551 20.5779 35.3851 21 35.9451C21.4221 36.5401 27.1558 45.2901 35.8794 49.0351C37.9548 49.9451 39.5729 50.4701 40.8392 50.8551C42.9146 51.5201 44.8141 51.4151 46.3266 51.2051C48.0151 50.9601 51.4975 49.1051 52.201 47.0751C52.9397 45.0451 52.9397 43.3301 52.6935 42.9451C52.4472 42.5601 51.9196 42.3851 51.0402 41.9651Z"
+				fill="black" />
+		</svg>
+	</div>
 </div>
 <div class="wave-card-right" id="right-card">
-  <div class="card-right" id="right-card-content">
-    <h1>Menú</h1>
-    <div class="menu-element">
-      <div class="minus-container" [ngClass]="{ show: showMinusVision }">
-        <span class="minus"></span>
-      </div>
-      <h2
-        class="vision-title"
-        (click)="goTo('/vision', blue)"
-        (mouseenter)="toggleMinusVision()"
-        (mouseleave)="toggleMinusVision()"
-      >
-        Visión
-      </h2>
-    </div>
-    <div class="menu-element">
-      <div class="minus-container" [ngClass]="{ show: showMinusServices }">
-        <span class="minus"></span>
-      </div>
-      <h2
-        class="servicios-title"
-        (click)="goTo(getServicesRoute(), colorDark)"
-        (mouseenter)="toggleMinusServices()"
-        (mouseleave)="toggleMinusServices()"
-      >
-        Servicios
-      </h2>
-    </div>
-  </div>
+	<div class="card-right" id="right-card-content">
+		<h1>Menú</h1>
+		<div class="menu-element">
+			<div class="minus-container" [ngClass]="{ show: showMinusVision }">
+				<span class="minus"></span>
+			</div>
+			<h2
+				class="vision-title"
+				(click)="goTo('/vision', blue)"
+				(mouseenter)="toggleMinusVision()"
+				(mouseleave)="toggleMinusVision()">
+				Visión
+			</h2>
+		</div>
+		<div class="menu-element">
+			<div
+				class="minus-container"
+				[ngClass]="{ show: showMinusServices }">
+				<span class="minus"></span>
+			</div>
+			<h2
+				class="servicios-title"
+				(click)="goTo(getServicesRoute(), colorDark)"
+				(mouseenter)="toggleMinusServices()"
+				(mouseleave)="toggleMinusServices()">
+				Servicios
+			</h2>
+		</div>
+	</div>
 </div>

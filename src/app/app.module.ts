@@ -23,24 +23,24 @@ import { SafeHtmlPipe } from './utils/safe-html.pipe';
 import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mobile.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WaveCardComponent,
-    HomeComponent,
-    MenuComponent,
-    LogoComponent,
-    VisionComponent,
-    ServiciosComponent,
-    HoverLetterComponent,
-    ColorTransitionComponent,
-    LinksComponent,
-    CircleComponent,
-    ServiciosNavComponent,
-    SafeHtmlPipe,
-    ServiciosMobileComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		WaveCardComponent,
+		HomeComponent,
+		MenuComponent,
+		LogoComponent,
+		VisionComponent,
+		ServiciosComponent,
+		HoverLetterComponent,
+		ColorTransitionComponent,
+		LinksComponent,
+		CircleComponent,
+		ServiciosNavComponent,
+		SafeHtmlPipe,
+		ServiciosMobileComponent,
+	],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

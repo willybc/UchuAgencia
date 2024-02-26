@@ -1,18 +1,18 @@
 .logo {
-  position: fixed;
-  top: 7.5rem;
-  left: 5.2rem;
-  z-index: 9;
-  cursor: pointer;
+	position: fixed;
+	top: 7.5rem;
+	left: 5.2rem;
+	z-index: 9;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1023px) {
-  .logo {
-    top: 3rem;
-    left: 4.2rem;
-  }
+	.logo {
+		top: 3rem;
+		left: 4.2rem;
+	}
 
-  .logo svg {
-    width: 10rem;
-  }
+	.logo svg {
+		width: 10rem;
+	}
 }

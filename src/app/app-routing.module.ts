@@ -7,15 +7,15 @@ import { ServiciosNavComponent } from './pages/servicios-nav/servicios-nav.compo
 import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mobile.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'vision', component: VisionComponent },
-  { path: 'servicios', component: ServiciosComponent },
-  { path: 'servicios/nav', component: ServiciosNavComponent },
-  { path: 'servicios/mobile', component: ServiciosMobileComponent }
+	{ path: '', component: HomeComponent },
+	{ path: 'vision', component: VisionComponent },
+	{ path: 'servicios', component: ServiciosComponent },
+	{ path: 'servicios/nav', component: ServiciosNavComponent },
+	{ path: 'servicios/mobile', component: ServiciosMobileComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -1,61 +1,61 @@
 .service-nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100vw;
+	height: 100vh;
 }
 
 .service-nav-section {
-  width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 2rem;
-  transition: all 0.5s ease;
-  cursor: pointer;
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 2rem;
+	transition: all 0.5s ease;
+	cursor: pointer;
 }
 
 .service-nav-section h3 {
-  margin-bottom: 32vh;
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
+	margin-bottom: 32vh;
+	font-size: 3rem;
+	font-weight: 700;
+	text-align: center;
 }
 
 .yellow,
 .rose {
-  background-color: var(--primary-dark);
-  color: var(--primary-light);
+	background-color: var(--primary-dark);
+	color: var(--primary-light);
 }
 
 .orange,
 .esmerald {
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
+	background-color: var(--primary-light);
+	color: var(--primary-dark);
 }
 
 .yellow:hover {
-  background-color: var(--yellow);
-  color: var(--primary-dark);
+	background-color: var(--yellow);
+	color: var(--primary-dark);
 }
 
 .orange:hover {
-  background-color: var(--orange);
+	background-color: var(--orange);
 }
 
 .rose:hover {
-  background-color: var(--rose);
-  color: var(--primary-dark);
+	background-color: var(--rose);
+	color: var(--primary-dark);
 }
 
 .esmerald:hover {
-  background-color: var(--esmerald);
+	background-color: var(--esmerald);
 }
 
 .service-nav-section svg {
-  width: 12vw;
+	width: 12vw;
 }

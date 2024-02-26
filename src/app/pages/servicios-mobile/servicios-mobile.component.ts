@@ -6,126 +6,126 @@ import { NavigationService } from 'src/app/services/navigation.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-servicios-mobile',
-  templateUrl: './servicios-mobile.component.html',
-  styleUrls: ['./servicios-mobile.component.scss'],
+	selector: 'app-servicios-mobile',
+	templateUrl: './servicios-mobile.component.html',
+	styleUrls: ['./servicios-mobile.component.scss'],
 })
 export class ServiciosMobileComponent {
-  index!: number;
-  lenght = 4;
-  nextIndex!: number;
-  translate!: number;
-  linksColor: PrimaryColor = PrimaryColor.Light;
-  logoColor = '#FFFAF3';
+	index!: number;
+	lenght = 4;
+	nextIndex!: number;
+	translate!: number;
+	linksColor: PrimaryColor = PrimaryColor.Light;
+	logoColor = '#FFFAF3';
 
-  constructor(
-    private linksService: LinksService,
-    private navService: NavigationService,
-    private router: Router
-  ) {}
+	constructor(
+		private linksService: LinksService,
+		private navService: NavigationService,
+		private router: Router
+	) {}
 
-  ngOnInit() {
-    this.index = 0;
-    this.translate = 0;
+	ngOnInit() {
+		this.index = 0;
+		this.translate = 0;
 
-    this.linksService.changeLeftColor(PrimaryColor.Light);
-    this.linksService.changeRightColor(PrimaryColor.Light);
-  }
+		this.linksService.changeLeftColor(PrimaryColor.Light);
+		this.linksService.changeRightColor(PrimaryColor.Light);
+	}
 
-  yDown!: number | null;
-  @HostListener('window:touchstart', ['$event'])
-  onTouchStart(e: TouchEvent) {
-    const firstTouch = e.touches[0];
-    this.yDown = firstTouch.clientY;
-  }
+	yDown!: number | null;
+	@HostListener('window:touchstart', ['$event'])
+	onTouchStart(e: TouchEvent) {
+		const firstTouch = e.touches[0];
+		this.yDown = firstTouch.clientY;
+	}
 
-  @HostListener('window:touchmove', ['$event'])
-  onTouchMove(e: TouchEvent) {
-    if (this.yDown) {
-      const yUp = e.touches[0].clientY;
-      const yDiff = this.yDown! - yUp;
+	@HostListener('window:touchmove', ['$event'])
+	onTouchMove(e: TouchEvent) {
+		if (this.yDown) {
+			const yUp = e.touches[0].clientY;
+			const yDiff = this.yDown! - yUp;
 
-      if (yDiff > 0) {
-        if (this.index + 1 < this.lenght) {
-          this.nextIndex = this.index + 1;
-        } else {
-          return;
-        }
-        this.translate -= 100;
-      } else if (yDiff < 0) {
-        if (this.index - 1 >= 0) {
-          this.nextIndex = this.index - 1;
-        } else {
-          return;
-        }
-        this.translate += 100;
-      }
+			if (yDiff > 0) {
+				if (this.index + 1 < this.lenght) {
+					this.nextIndex = this.index + 1;
+				} else {
+					return;
+				}
+				this.translate -= 100;
+			} else if (yDiff < 0) {
+				if (this.index - 1 >= 0) {
+					this.nextIndex = this.index - 1;
+				} else {
+					return;
+				}
+				this.translate += 100;
+			}
 
-      this.yDown = null;
+			this.yDown = null;
 
-      anime({
-        targets: '#service-mobile',
-        translateY: this.translate + 'vh',
-        duration: 1000,
-        easing: 'easeInOutSine',
-      });
+			anime({
+				targets: '#service-mobile',
+				translateY: this.translate + 'vh',
+				duration: 1000,
+				easing: 'easeInOutSine',
+			});
 
-      this.index = this.nextIndex;
-      this.setColor(this.index);
-    }
-  }
+			this.index = this.nextIndex;
+			this.setColor(this.index);
+		}
+	}
 
-  isEven(i: number) {
-    return i == 0 || i == 2;
-  }
+	isEven(i: number) {
+		return i == 0 || i == 2;
+	}
 
-  setColor(i: number) {
-    if (this.isEven(i)) {
-      this.linksColor = PrimaryColor.Light;
-      this.logoColor = '#FFFAF3';
-    } else {
-      this.linksColor = PrimaryColor.Dark;
-      this.logoColor = '#030202';
-    }
+	setColor(i: number) {
+		if (this.isEven(i)) {
+			this.linksColor = PrimaryColor.Light;
+			this.logoColor = '#FFFAF3';
+		} else {
+			this.linksColor = PrimaryColor.Dark;
+			this.logoColor = '#030202';
+		}
 
-    this.linksService.changeLeftColor(this.linksColor);
-    this.linksService.changeRightColor(this.linksColor);
-  }
+		this.linksService.changeLeftColor(this.linksColor);
+		this.linksService.changeRightColor(this.linksColor);
+	}
 
-  serviceColor(i: number) {
-    const colors = [
-      SecondaryColor.Yellow,
-      SecondaryColor.Orange,
-      SecondaryColor.Rose,
-      SecondaryColor.Green,
-    ];
-    return colors[i];
-  }
+	serviceColor(i: number) {
+		const colors = [
+			SecondaryColor.Yellow,
+			SecondaryColor.Orange,
+			SecondaryColor.Rose,
+			SecondaryColor.Green,
+		];
+		return colors[i];
+	}
 
-  goToService(i: number) {
-    // const services = [
-    //   this.comunicacion,
-    //   this.disenio,
-    //   this.campanias,
-    //   this.eventos,
-    // ];
+	goToService(i: number) {
+		// const services = [
+		//   this.comunicacion,
+		//   this.disenio,
+		//   this.campanias,
+		//   this.eventos,
+		// ];
 
-    // this.transService.setProperties(
-    //   opositeColor(services[i].primary),
-    //   services[i].secondary,
-    //   window.innerWidth / 2,
-    //   window.innerHeight / 2,
-    //   'servicios'
-    // );
+		// this.transService.setProperties(
+		//   opositeColor(services[i].primary),
+		//   services[i].secondary,
+		//   window.innerWidth / 2,
+		//   window.innerHeight / 2,
+		//   'servicios'
+		// );
 
-    this.navService.setSectionNavigate(i);
-    this.router.navigate(['/servicios']);
-  }
+		this.navService.setSectionNavigate(i);
+		this.router.navigate(['/servicios']);
+	}
 
-  servicesContent = [
-    {
-      title: 'Data Comunicación',
-      backgroundIcons: `
+	servicesContent = [
+		{
+			title: 'Data Comunicación',
+			backgroundIcons: `
       <path
         d="M225.874 612.756C224.553 609.961 222.902 607.208 220.388 605.476C218.105 603.901 215.319 603.305 212.591 602.894C201.777 601.262 190.691 601.986 179.935 604.086C173.502 605.349 167.111 607.122 161.266 610.188C158.236 611.777 155.264 613.82 153.497 616.814C152.406 618.688 151.832 620.83 151.473 622.987C149.907 632.495 152.363 642.357 156.872 650.772C159.127 654.972 161.985 658.988 165.977 661.457C170.73 664.395 176.56 664.849 182.118 664.523C188.451 664.154 194.741 662.876 200.758 660.734C201.418 660.507 202.093 660.251 202.783 660.336C203.386 660.407 203.931 660.734 204.448 661.06C208.771 663.756 212.907 666.736 216.841 670L216.87 669.191C217.2 664.707 217.918 659.925 218.651 656.221C218.809 655.398 218.981 654.561 219.34 653.809C219.943 652.546 221.035 651.623 222.026 650.644C226.793 645.919 229.464 639.193 229.924 632.41C230.383 625.627 228.732 618.815 225.86 612.713L225.874 612.756ZM193.577 651.992C180.452 659.357 165.173 651.425 163.421 636.78C163.119 634.198 167.212 634.226 167.513 636.78C168.906 648.459 181.299 654.234 191.51 648.502C193.807 647.21 195.861 650.715 193.577 651.992ZM218.55 621.128C216.913 617.723 214.156 615.055 210.566 613.721C208.11 612.813 209.187 608.91 211.657 609.819C216.224 611.507 219.972 614.7 222.083 619.085C223.217 621.426 219.685 623.47 218.55 621.128Z"
         fill="#FFF9F3"
@@ -150,10 +150,10 @@ export class ServiciosMobileComponent {
         d="M240.489 129.859C239.059 126.77 237.247 123.751 234.528 121.832C232.036 120.086 229.003 119.441 226.04 118.987C214.259 117.189 202.198 117.975 190.486 120.313C183.48 121.709 176.526 123.664 170.164 127.032C166.87 128.795 163.628 131.029 161.711 134.344C160.509 136.404 159.899 138.777 159.515 141.151C157.807 151.639 160.491 162.529 165.406 171.796C167.864 176.421 170.983 180.854 175.323 183.576C180.499 186.822 186.843 187.311 192.891 186.944C199.793 186.525 206.642 185.129 213.178 182.773C213.893 182.511 214.642 182.25 215.391 182.337C216.054 182.424 216.646 182.773 217.204 183.14C221.91 186.107 226.424 189.405 230.694 193L230.729 192.11C231.095 187.171 231.879 181.901 232.663 177.799C232.837 176.892 233.012 175.967 233.413 175.147C234.075 173.751 235.26 172.738 236.323 171.656C241.517 166.456 244.427 159.021 244.915 151.535C245.421 144.048 243.626 136.543 240.489 129.807V129.859ZM189.44 154.135C188.098 154.135 187.018 153.053 187.018 151.709C187.018 150.365 188.098 149.283 189.44 149.283C190.782 149.283 191.863 150.365 191.863 151.709C191.863 153.053 190.782 154.135 189.44 154.135ZM207.148 149.475C205.806 149.475 204.725 148.393 204.725 147.049C204.725 145.706 205.806 144.624 207.148 144.624C208.49 144.624 209.57 145.706 209.57 147.049C209.57 148.393 208.49 149.475 207.148 149.475ZM223.043 145.723C221.701 145.723 220.62 144.641 220.62 143.297C220.62 141.953 221.701 140.871 223.043 140.871C224.385 140.871 225.465 141.953 225.465 143.297C225.465 144.641 224.385 145.723 223.043 145.723Z"
         fill="#FFF9F3"
       />`,
-    },
-    {
-      title: 'Diseño gráfico y audiovisual',
-      backgroundIcons: `
+		},
+		{
+			title: 'Diseño gráfico y audiovisual',
+			backgroundIcons: `
       <path
         d="M403.557 0.40638C377.795 -2.7087 353.483 12.0983 347.784 44.3706C342.084 76.6429 369.339 89.7263 369.339 89.7263L367.038 108.853L385.049 111.2C387.246 96.0395 389.443 80.8794 391.619 65.6986C391.702 65.2002 391.909 64.7433 392.158 64.3279C390.396 63.8088 388.8 62.9158 387.598 61.4621C384.862 58.1808 385.153 52.9683 387.785 49.5832C390.396 46.1981 394.873 44.5991 399.122 44.8275C402.231 44.9936 405.381 46.0943 407.516 48.3579C408.884 49.7909 409.754 51.7222 409.899 53.6743C410.625 55.6265 410.252 58.0978 408.967 59.8214C407.163 62.272 404.137 63.518 401.194 64.2241C400.946 64.2864 400.676 64.3279 400.427 64.3695C401.07 65.4909 401.277 66.8823 401.07 68.2945L394.686 112.425L414.459 115L416.987 94.0874C416.987 94.0874 446.128 95.3542 451.289 57.454C456.802 17.0409 429.257 3.45917 403.516 0.344081L403.557 0.40638Z"
         fill="#050000"
@@ -203,10 +203,10 @@ export class ServiciosMobileComponent {
         </clipPath>
       </defs>
       `,
-    },
-    {
-      title: 'Campañas Publicitarias',
-      backgroundIcons: `
+		},
+		{
+			title: 'Campañas Publicitarias',
+			backgroundIcons: `
       <path
         d="M408.715 644.247C418.963 627.395 425.524 611.226 426.803 601.142C426.905 600.33 426.265 599.618 425.446 599.618C387.42 599.543 352.007 589.201 342.189 586.081C341.591 585.889 340.939 586.137 340.615 586.673L326.222 610.349C325.9 610.881 325.972 611.557 326.404 612.004C330.543 616.292 340.701 627.213 351.986 642.056C352.324 642.501 352.357 643.109 352.067 643.589L351.691 644.207C350.379 646.365 347.387 646.949 345.019 645.509L313.12 626.118C310.753 624.678 309.895 621.755 311.207 619.597L319.365 606.177C319.755 605.535 320.592 605.329 321.237 605.722C321.879 606.112 322.72 605.909 323.109 605.267L334.7 586.199C335.089 585.558 334.887 584.717 334.245 584.327L321.102 576.336C320.44 575.935 319.55 576.162 318.54 576.821C318.094 577.11 317.524 577.133 317.068 576.857L313.245 574.536C310.219 572.697 299.855 589.751 302.884 591.579L306.707 593.901C307.163 594.177 307.406 594.692 307.351 595.227C307.228 596.434 307.436 597.333 308.098 597.734L314.137 601.405C314.779 601.795 314.985 602.632 314.592 603.277L306.434 616.697C303.662 621.254 305.481 627.433 310.477 630.472L342.376 649.863C346.662 652.467 351.908 651.929 355.065 648.857C355.667 648.268 356.645 648.33 357.136 649.012C363.825 658.267 370.638 668.698 376.632 679.805C377.015 680.516 377.929 680.746 378.592 680.292C386.975 674.576 398.388 661.235 408.716 644.253L408.715 644.247Z"
         fill="#FFF9F3"
@@ -236,10 +236,10 @@ export class ServiciosMobileComponent {
         fill="#FFF9F3"
       />
       `,
-    },
-    {
-      title: 'Producción de Eventos',
-      backgroundIcons: `
+		},
+		{
+			title: 'Producción de Eventos',
+			backgroundIcons: `
       <path
         d="M99.9382 60.2021C89.113 66.8194 75.9083 68.902 63.2734 67.6591C56.9727 67.0545 50.1692 65.2742 46.4491 60.1349C41.1873 52.8122 45.008 41.8282 52.1801 36.3529C54.4926 34.6062 57.0397 33.2962 59.7543 32.2549L55.364 29.3997C72.2552 21.506 91.1574 17.979 109.724 19.2554C113.143 19.4906 116.997 20.1624 118.84 23.0175C120.047 24.865 120.114 27.2499 119.913 29.4333C118.84 42.0969 110.696 53.5848 99.8712 60.2021L99.9382 60.2021Z"
         fill="#050000"
@@ -293,6 +293,6 @@ export class ServiciosMobileComponent {
         fill="#030202"
       />
       `,
-    },
-  ];
+		},
+	];
 }

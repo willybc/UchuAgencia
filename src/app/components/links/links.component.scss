@@ -1,120 +1,120 @@
 .links {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 6rem;
-  pointer-events: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 6rem;
+	pointer-events: none;
 }
 
 .follow,
 .hello {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .follow {
-  align-items: center;
+	align-items: center;
 }
 
 .hello {
-  align-items: flex-end;
+	align-items: flex-end;
 }
 
 .follow-title,
 .hello-title {
-  font-size: 2em;
-  font-weight: 700;
+	font-size: 2em;
+	font-weight: 700;
 }
 
 .follow-popup,
 .hello-popup {
-  transform: translateY(3rem);
-  opacity: 0;
+	transform: translateY(3rem);
+	opacity: 0;
 }
 
 .follow-popup {
-  font-size: 1.5em;
-  font-weight: 700;
+	font-size: 1.5em;
+	font-weight: 700;
 }
 
 .follow-separator {
-  font-weight: 500;
-  margin: 0 0.2rem;
+	font-weight: 500;
+	margin: 0 0.2rem;
 }
 
 .hello-popup {
-  font-size: 2em;
-  font-weight: 500;
+	font-size: 2em;
+	font-weight: 500;
 }
 
 .follow-appear {
-  animation: follow-appear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: follow-appear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes follow-appear {
-  0% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+	0% {
+		transform: translateY(3rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .follow-disappear {
-  animation: follow-disappear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: follow-disappear 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes follow-disappear {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(3rem);
+		opacity: 0;
+	}
 }
 
 .hello-alert {
-  animation: hello-alert 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: hello-alert 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes hello-alert {
-  0% {
-    transform: translateY(3rem);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-  }
+	0% {
+		transform: translateY(3rem);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 0;
+	}
 }
 
 @media screen and (max-width: 1023px) {
-  .links {
-    padding: 4rem;
-  }
+	.links {
+		padding: 4rem;
+	}
 
-  .follow,
-  .hello {
-    font-size: 0.8rem;
-  }
+	.follow,
+	.hello {
+		font-size: 0.8rem;
+	}
 }
 
-.follow-popup a{
-  text-decoration: none;
-  color: inherit;
+.follow-popup a {
+	text-decoration: none;
+	color: inherit;
 }
