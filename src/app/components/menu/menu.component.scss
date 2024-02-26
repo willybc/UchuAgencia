@@ -244,6 +244,10 @@
 	bottom: 7.2%;
 }
 
+.linea {
+	background-color: black;
+}
+
 @media screen and (max-width: 1023px) {
 	.menu-btn {
 		top: 6.6%;
@@ -260,7 +264,70 @@
 	}
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
+	.animateOpacity {
+		transition: opacity 1s ease;
+	}
+	
+	.animateEnter {
+		animation: slideEnter 1s ease-out forwards;
+	}
+	
+	@keyframes slideEnter {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 100%;
+		}
+	}
+
+	.nonMobile {
+		display: none;
+	}
+
+	#menu-btn-icon .linea {
+		background-color: black;
+	}
+
+	#menu-btn-icon.open .linea {
+		background-color: white;
+	}
+
+	#left-card {
+		height: 40%;
+		top: 60%;
+		right: 0%;
+	}
+
+	#right-card {
+		height: 60%;
+		top: 0%;
+		left: 0%;
+	}
+
+	.card-right, .card-left {
+		align-items: center;
+	}
+
+	.card-right h1 {
+		padding-right: 0;
+	}
+
+	.contact-icons {
+		display: flex;
+		gap: 5rem;
+	}
+
+	.whatsapp {
+		position: relative;
+		z-index: 3;
+		left: 0;
+		bottom: 0;
+	}
+}
+
+ /* @media (max-width: 768px) {
 	#left-card,
 	#right-card {
 		min-width: 100%;
@@ -268,8 +335,6 @@
 		height: 50%;
 
 		position: static;
-
-		z-index: 3;
 	}
 
 	#left-card.animateEnter {
@@ -291,4 +356,5 @@
 	.card-right h1 {
 		padding-right: 0;
 	}
-} */
+} 
+ */

@@ -95,10 +95,17 @@
 }
 
 @media (max-width: 768px) {
+	.content-left {
+		height: 40%;
+	}
+
+	.content-right {
+		height: 60%;
+	}
+
     .content-left,
     .content-right {
         width: 100%;
-        height: 50%;
     }
 
     .content-left {
@@ -112,6 +119,10 @@
     }
 
 	.background-container {
+		display: none;
+	}
+
+	.canvas-container {
 		display: none;
 	}
 }

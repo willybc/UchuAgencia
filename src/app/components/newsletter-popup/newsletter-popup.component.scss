@@ -1,0 +1,159 @@
+.newsletter-popup {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+	height: 60%;
+	background-color: #2974ed;
+	z-index: 999;
+	animation: slide-up 0.5s ease-out;
+
+	border-top-left-radius: 2rem;
+	border-top-right-radius: 2rem;
+}
+
+.newsletter-content {
+	height: 60%;
+	width: 90%;
+}
+
+.container-newsletter {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	gap: 2rem;
+
+	align-items: center;
+
+	.newsletter-title {
+		height: 50%;
+		width: 75%;
+		color: #d9d9d9;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		gap: 1rem;
+
+		h1 {
+			font-weight: bold;
+			font-size: 20px;
+			color: #d9d9d9;
+		}
+
+		p {
+			text-align: center;
+			font-size: medium;
+			font-size: 20px;
+			color: #d9d9d9;
+		}
+	}
+
+	.newsletter-form {
+		height: 50%;
+		width: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		form {
+			display: flex;
+			flex-direction: column;
+
+			height: 100%;
+			width: 100%;
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				height: 100%;
+				width: 100%;
+
+				input, .btn {
+					width: 80%;
+					height: 75%;
+				}
+
+				input {
+					text-align: center;
+					color: #1E1E1E;
+					font-weight: bold;
+					/* font-size: 15px; */
+
+				}
+
+				.btn {
+					background-color: black;
+					color: white;
+					border: none;
+					padding: 10px 20px;
+					font-size: 16px;
+					cursor: pointer;
+				  }
+				  
+				  .btn:hover {
+					background-color: #333;
+					color: #fff;
+				  }
+				  
+				  .btn:active {
+					background-color: #666;
+				  }
+			}
+
+			
+		}
+	}
+}
+
+.menu-btn-icon {
+	width: 3.7rem;
+	height: 4rem;
+	position: absolute;
+	transform: rotate(0deg);
+	transition: transform 0.5s ease-in-out;
+
+	top: 60px;
+	right: 30px;
+}
+
+.menu-btn-icon span {
+	display: block;
+	position: absolute;
+	height: var(--height);
+	width: 100%;
+	background: #d9d9d9;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	transform: rotate(0deg);
+	transition: transform 0.25s ease-in-out;
+
+	cursor: pointer;
+}
+
+.menu-btn-icon span:nth-child(1) {
+	transform: rotate(45deg);
+}
+
+.menu-btn-icon span:nth-child(2) {
+	transform: rotate(-45deg);
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}

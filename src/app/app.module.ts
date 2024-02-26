@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { CircleComponent } from './components/circle/circle.component';
 import { ServiciosNavComponent } from './pages/servicios-nav/servicios-nav.component';
 import { SafeHtmlPipe } from './utils/safe-html.pipe';
 import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mobile.component';
+import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
 
 @NgModule({
 	declarations: [
@@ -38,8 +40,9 @@ import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mob
 		ServiciosNavComponent,
 		SafeHtmlPipe,
 		ServiciosMobileComponent,
+		NewsletterPopupComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule ],
 	providers: [],
 	bootstrap: [AppComponent],
 })

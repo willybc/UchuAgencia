@@ -31,6 +31,8 @@ export class MenuComponent {
 	isTransitioning = false;
 	blue = SecondaryColor.Blue;
 
+	showNewsletterPopup: boolean = false;
+
 	constructor(
 		private router: Router,
 		private location: Location,
@@ -39,7 +41,13 @@ export class MenuComponent {
 		private menuService: MenuService
 	) {}
 
-	
+	checkResolution() {
+		if (window.innerWidth < 768) {
+			this.spanColor = PrimaryColor.Dark;
+		} else {
+			this.spanColor = PrimaryColor.Light;
+		}
+	}
 
 	ngOnInit() {
 		this.router.events.subscribe(event => {
@@ -65,6 +73,10 @@ export class MenuComponent {
 
 		/* this.checkResolution(); */
 	}
+
+	toggleNewsletterPopup() {
+		this.showNewsletterPopup = !this.showNewsletterPopup;
+	  }
 
 	goTo(page: string, color: string) {
 		this.router.navigate([page]);
@@ -191,7 +203,7 @@ abstract class AnimationElement {
 			if (this.leftCard.classList.contains('animateEnter')) {
 				this.linksService.changeLeftColor(PrimaryColor.Dark);
 				this.leftContent.style.opacity = '1';
-				/* this.leftContent.style.zIndex = '1'; */
+				this.leftContent.style.zIndex = '1';
 			}
 		});
 
@@ -199,8 +211,7 @@ abstract class AnimationElement {
 			if (this.rightCard.classList.contains('animateEnter')) {
 				this.linksService.changeRightColor(PrimaryColor.Light);
 				this.rightContent.style.opacity = '1';
-				
-				/* this.rightContent.style.zIndex = '1'; */
+				this.rightContent.style.zIndex = '1';
 			}
 		});
 	}
