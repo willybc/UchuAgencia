@@ -27,3 +27,21 @@
 		);
 	}
 }
+
+@media (max-width: 768px) {
+	canvas {
+		background: none;
+	}
+
+	#wave-card-canvas {
+        height: 15%;
+		width: 100%;
+        background: linear-gradient(
+            to bottom,
+            var(--primary-light) 0%,
+            var(--primary-light) 50%,
+            var(--primary-dark) 50%,
+            var(--primary-dark) 100%
+        );
+    }
+}

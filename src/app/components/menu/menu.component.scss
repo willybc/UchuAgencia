@@ -259,3 +259,36 @@
 		--dist: calc(var(--height) * 2);
 	}
 }
+
+/* @media (max-width: 768px) {
+	#left-card,
+	#right-card {
+		min-width: 100%;
+		width: 100%;
+		height: 50%;
+
+		position: static;
+
+		z-index: 3;
+	}
+
+	#left-card.animateEnter {
+		order: 2;
+	}
+
+	.container-menu-cards {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
+
+	.card-left.animateEnter,
+	.card-right.animateEnter {
+		align-items: center;
+	}
+
+	.card-right h1 {
+		padding-right: 0;
+	}
+} */

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, HostListener } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 import { LinksService } from 'src/app/services/links.service';
@@ -39,6 +39,8 @@ export class MenuComponent {
 		private menuService: MenuService
 	) {}
 
+	
+
 	ngOnInit() {
 		this.router.events.subscribe(event => {
 			if (event instanceof NavigationStart) {
@@ -47,6 +49,7 @@ export class MenuComponent {
 		});
 		this.rootURL = this.location.path();
 
+		console.log('antes ejecutar service', this.spanColor);
 		this.linksService.rightColor$.subscribe(color => {
 			this.spanColor = color;
 		});
@@ -59,6 +62,8 @@ export class MenuComponent {
 		this.menuService.closeMenu$.subscribe(() => {
 			this.toggleMenu();
 		});
+
+		/* this.checkResolution(); */
 	}
 
 	goTo(page: string, color: string) {
@@ -186,6 +191,7 @@ abstract class AnimationElement {
 			if (this.leftCard.classList.contains('animateEnter')) {
 				this.linksService.changeLeftColor(PrimaryColor.Dark);
 				this.leftContent.style.opacity = '1';
+				/* this.leftContent.style.zIndex = '1'; */
 			}
 		});
 
@@ -193,6 +199,8 @@ abstract class AnimationElement {
 			if (this.rightCard.classList.contains('animateEnter')) {
 				this.linksService.changeRightColor(PrimaryColor.Light);
 				this.rightContent.style.opacity = '1';
+				
+				/* this.rightContent.style.zIndex = '1'; */
 			}
 		});
 	}
