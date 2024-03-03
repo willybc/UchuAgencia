@@ -90,7 +90,7 @@
 
 .bottom-animation {
 	width: 75em;
-	height: 7rem;
+	height: 11rem;
 	background-color: #fff9f3;
 	overflow: hidden;
 	padding: 1rem;
@@ -110,7 +110,29 @@
 	letter-spacing: 0.8rem;
 }
 
+@media screen and (max-width: 1450px) {
+	.bottom-animation {
+		width: 95em;
+	}
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+	.bottom-animation {
+		width: 105em;
+	}
+}
+
+
 @media screen and (max-width: 1023px) {
+	.bottom-animation {
+		height: 8rem;
+	}
+
+	.bottom-animation h1 {
+		font-size: 4vh;
+		margin-bottom: 2vh;
+	}
+
 	.bottom-animation {
 		width: 90%;
 	}
@@ -161,23 +183,15 @@
 	.down-container {
 		height: 10rem;
 	}
+}	
 
-	/* descomentar si se borra lo anterior
-  .vision-top{
-    position: relative;
-    margin-top: 10rem;
-  }
-  .vision-top p {
-    font-size: 2.8rem;
-  }
+@media screen and (max-width: 768px) {
+	.bottom-animation {
+		height: 7rem;
+	}
 
-  .down-container p{ top: -95%; }
-
-  .down-container{ height: 4rem; right: 0;}
-
-  .up-container p, .down-container p{ margin: auto; }
-
-  .up-container{ height: 9rem; }
-
-  .up-container p{ top: 79%; }*/
+	.bottom-animation h1 {
+		font-size: 4vh;
+		margin-bottom: 3vh;
+	}
 }
