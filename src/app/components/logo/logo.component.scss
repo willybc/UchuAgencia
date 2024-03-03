@@ -8,11 +8,22 @@
 
 @media screen and (max-width: 1023px) {
 	.logo {
-		top: 3rem;
+		top: 6rem;
 		left: 4.2rem;
 	}
 
 	.logo svg {
-		width: 10rem;
+		width: 12rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		top: 6rem;
+		left: 5.2rem;
+	}
+
+	.logo svg {
+		width: 14rem;
 	}
 }

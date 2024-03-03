@@ -422,18 +422,18 @@
 	}
 
 	#menu-btn-icon {
-		width: 2.5rem;
+		width: 3.5rem;
 	}
 
 	:root {
-		--height: 0.4rem;
+		--height: 0.55rem;
 		--dist: calc(var(--height) * 2);
 	}
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 	.menu-btn {
-		top: 3.6%;
+		top: 7rem;
 		right: 10%;
 		pointer-events: fill;
 		z-index: 25000;

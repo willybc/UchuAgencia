@@ -111,11 +111,25 @@
     .content-left {
         top: 0;
         bottom: auto;
+
+		h1 {
+			font-size: 60px;
+		}
+
+		.container-vision-mobile {
+			display: flex;
+			height: 40%;
+			align-items: flex-end;
+		}
     }
 
     .content-right {
         top: auto;
         bottom: 0;
+
+		h1 {
+			font-size: 60px;
+		}
     }
 
 	.background-container {
