@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { LinksService } from 'src/app/services/links.service';
 import { ScrollService } from 'src/app/services/scroll.service';
@@ -35,6 +35,7 @@ export class MenuComponent {
 
 	constructor(
 		private router: Router,
+		private activatedRoute: ActivatedRoute,
 		private location: Location,
 		private linksService: LinksService,
 		private scrollService: ScrollService,
@@ -71,7 +72,8 @@ export class MenuComponent {
 			this.toggleMenu();
 		});
 
-		/* this.checkResolution(); */
+		this.checkResolution();
+
 	}
 
 	toggleNewsletterPopup() {
@@ -131,13 +133,22 @@ export class MenuComponent {
 			// Ejecuta la animación de cerrar
 			this.animateCerrarMenu(() => {
 				// Después de la animación, cambia el color del menú
-				this.linksService.changeLeftColor(PrimaryColor.Dark);
+				console.log(this.rootURL)
+				if(this.rootURL === '/vision' || this.rootURL === '/servicios/mobile') {
+					this.linksService.changeRightColor(PrimaryColor.Light);
+					this.linksService.changeLeftColor(PrimaryColor.Light);
+				}
+				else {
+
+					this.linksService.changeLeftColor(PrimaryColor.Dark);
+				}
 				// Cambia el estado del menú después de la animación
 				this.menuMobileAbierto = !this.menuMobileAbierto;
 			});
 		} else {
 			// Si el menú está cerrado y va a abrirse
 			// Cambia el color del menú
+			console.log("menu estaba cerrado y se abrio")
 			this.linksService.changeLeftColor(PrimaryColor.Light);
 			// Cambia el estado del menú
 			this.menuMobileAbierto = !this.menuMobileAbierto;
@@ -187,7 +198,6 @@ export class MenuComponent {
 
 		if (!this.menuOpened) {
 			this.scrollService.notifyIsTransitioning();
-
 			if (this.rootURL == '/vision' || this.rootURL == '/servicios') {
 				this.lastLeftColor = this.spanColor;
 				this.lastRightColor = this.spanColor;
@@ -218,6 +228,16 @@ export class MenuComponent {
 		return window.innerWidth > MAX_VIEWPORT_MOBILE
 			? '/servicios'
 			: '/servicios/mobile';
+	}
+
+	goToVision() {
+		this.toggleMenuMobile();
+		this.router.navigate(['/vision']);
+	}
+
+	goToServicios() {
+		this.toggleMenuMobile();
+		this.router.navigate([this.getServicesRoute()]);
 	}
 }
 

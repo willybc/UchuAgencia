@@ -12,10 +12,10 @@
 
 <div class="menu-btn" (click)="toggleMenuMobile()">
 	<div class="itsMobile menu-btn-icon-mobile">
-		<span [ngClass]="{ activo: menuMobileAbierto }" class="linea"></span>
-		<span [ngClass]="{ activo: menuMobileAbierto }" class="linea"></span>
-		<span [ngClass]="{ activo: menuMobileAbierto }" class="linea"></span>
-		<span [ngClass]="{ activo: menuMobileAbierto }" class="linea"></span>
+		<span [ngClass]="{ activo: menuMobileAbierto }" [style.backgroundColor]="spanColor" class="linea"></span>
+		<span [ngClass]="{ activo: menuMobileAbierto }" [style.backgroundColor]="spanColor" class="linea"></span>
+		<span [ngClass]="{ activo: menuMobileAbierto }" [style.backgroundColor]="spanColor" class="linea"></span>
+		<span [ngClass]="{ activo: menuMobileAbierto }" [style.backgroundColor]="spanColor" class="linea"></span>
 	</div>
 </div>
 
@@ -98,10 +98,10 @@
 				<h5>MENÚ</h5>
 				<div class="menu-mobile-items">
 					<h3>
-						<a href="#">Visión</a>
+						<a (click)="goToVision()">Visión</a>
 					</h3>
 					<h3>
-						<a href="#">Servicios</a>
+						<a (click)="goToServicios()">Servicios</a>
 					</h3>
 				</div>
 			</div>
