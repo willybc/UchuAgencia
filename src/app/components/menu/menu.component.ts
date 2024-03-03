@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, HostListener } from '@angular/core';
+import { Component, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Location } from '@angular/common';
 import { LinksService } from 'src/app/services/links.service';
@@ -120,6 +120,47 @@ export class MenuComponent {
 			);
 		}
 	}
+
+	menuMobileAbierto: boolean = false
+
+	@ViewChild('menuContainer') menuContainer!: ElementRef;
+
+	toggleMenuMobile() {
+		if (this.menuMobileAbierto) {
+			// Si el menú está abierto y va a cerrarse
+			// Ejecuta la animación de cerrar
+			this.animateCerrarMenu(() => {
+				// Después de la animación, cambia el color del menú
+				this.linksService.changeLeftColor(PrimaryColor.Dark);
+				// Cambia el estado del menú después de la animación
+				this.menuMobileAbierto = !this.menuMobileAbierto;
+			});
+		} else {
+			// Si el menú está cerrado y va a abrirse
+			// Cambia el color del menú
+			this.linksService.changeLeftColor(PrimaryColor.Light);
+			// Cambia el estado del menú
+			this.menuMobileAbierto = !this.menuMobileAbierto;
+		}
+	}
+	
+	animateCerrarMenu(callback: () => void) {
+		// Agrega una clase para iniciar la animación de cerrar
+		// Supongamos que tienes una clase llamada "cerrando-menu" que realiza la animación
+		// Reemplaza "cerrando-menu" con el nombre de tu clase de animación
+		this.menuContainer!.nativeElement.classList.add("cerrado");
+	
+		// Espera un tiempo suficiente para que la animación se complete
+		setTimeout(() => {
+			// Remueve la clase de animación después de que termine la animación
+			// Supongamos que tienes una clase llamada "cerrando-menu" que realiza la animación
+			// Reemplaza "cerrando-menu" con el nombre de tu clase de animación
+			this.menuContainer!.nativeElement.classList.remove("cerrado");
+			// Ejecuta la función de callback después de la animación
+			callback();
+		}, 500); // Ajusta este valor al tiempo de duración de tu animación
+	}
+
 
 	toggleMenu() {
 		const leftCard = document.getElementById('left-card') as HTMLElement;
