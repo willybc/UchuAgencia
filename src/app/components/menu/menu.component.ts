@@ -149,6 +149,8 @@ export class MenuComponent {
 			// Cambia el color del menú
 			console.log("menu estaba cerrado y se abrio")
 			this.linksService.changeLeftColor(PrimaryColor.Light);
+			this.linksService.changeRightColor(PrimaryColor.Light);
+			this.spanColor = PrimaryColor.Dark;
 			// Cambia el estado del menú
 			this.menuMobileAbierto = !this.menuMobileAbierto;
 		}
