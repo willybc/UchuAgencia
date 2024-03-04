@@ -3,64 +3,64 @@ import { LinksService } from '../services/links.service';
 import anime from 'animejs/lib/anime.es.js';
 
 abstract class ServicioElement {
-  constructor(
-    public primary: string,
-    public secondary: string,
-    public icon: string
-  ) {}
+	constructor(
+		public primary: string,
+		public secondary: string,
+		public icon: string
+	) {}
 
-  primaryFill = this.primary;
-  secondaryFill = this.secondary;
+	primaryFill = this.primary;
+	secondaryFill = this.secondary;
 
-  change() {
-    this.primaryFill = PrimaryColor.Dark;
-    this.secondaryFill = PrimaryColor.Dark;
-  }
+	change() {
+		this.primaryFill = PrimaryColor.Dark;
+		this.secondaryFill = PrimaryColor.Dark;
+	}
 
-  unchange() {
-    this.primaryFill = this.primary;
-    this.secondaryFill = this.secondary;
-  }
+	unchange() {
+		this.primaryFill = this.primary;
+		this.secondaryFill = this.secondary;
+	}
 
-  abstract animation(): void;
+	abstract animation(): void;
 }
 
 abstract class ServicioWithLinksElement extends ServicioElement {
-  constructor(
-    primary: string,
-    secondary: string,
-    icon: string,
-    private linksService: LinksService,
-    private direction: string
-  ) {
-    super(primary, secondary, icon);
-  }
+	constructor(
+		primary: string,
+		secondary: string,
+		icon: string,
+		private linksService: LinksService,
+		private direction: string
+	) {
+		super(primary, secondary, icon);
+	}
 
-  override change() {
-    super.change();
-    if (this.direction == 'left') {
-      this.linksService.changeLeftColor(PrimaryColor.Dark);
-    } else {
-      this.linksService.changeRightColor(PrimaryColor.Light);
-    }
-  }
+	override change() {
+		super.change();
+		if (this.direction == 'left') {
+			this.linksService.changeLeftColor(PrimaryColor.Dark);
+		} else {
+			this.linksService.changeRightColor(PrimaryColor.Light);
+		}
+	}
 
-  override unchange() {
-    super.unchange();
-    if (this.direction == 'left') {
-      this.linksService.changeLeftColor(PrimaryColor.Light);
-    } else {
-      this.linksService.changeRightColor(PrimaryColor.Dark);
-    }
-  }
+	override unchange() {
+		super.unchange();
+		if (this.direction == 'left') {
+			this.linksService.changeLeftColor(PrimaryColor.Light);
+		} else {
+			this.linksService.changeRightColor(PrimaryColor.Dark);
+		}
+	}
 }
 
 export class ServicioComunicacion extends ServicioWithLinksElement {
-  constructor(linksService: LinksService) {
-    super(
-      PrimaryColor.Light,
-      SecondaryColor.Yellow,
-      `
+	constructor(linksService: LinksService) {
+		super(
+			PrimaryColor.Light,
+			SecondaryColor.Yellow,
+			`
       <svg width="214" height="186" viewBox="0 0 214 186" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_385_222)">
       <path d="M187.751 178.305C187.844 167.475 187.588 155.686 189.754 145.02C191.967 134.167 202.215 125.7 206.803 115.478C215.374 96.4384 215.887 74.6854 210.506 54.6633C205.895 37.4948 196.928 15.2272 180.298 6.50257C161.688 -3.22781 134.53 0.163786 114.593 2.66655C91.3019 5.59035 67.8243 11.2274 46.1634 20.4666C29.3238 27.6474 9.78247 37.986 3.56371 56.6047C-8.50116 92.6726 11.5526 145.909 41.3887 168.13C60.1149 182.047 84.4076 180.316 106.045 175.825C112.707 174.445 119.275 172.644 125.726 170.492C130.781 168.785 138.141 163.849 143.474 163.522C148.296 163.241 155.749 169.37 159.685 171.732C166.579 175.895 173.24 180.386 179.785 185.064C185.375 189.064 190.709 179.778 185.166 175.825C176.827 169.884 168.303 164.247 159.405 159.148C154.468 156.318 149.181 152.341 143.241 152.809C135.089 153.464 126.821 158.984 118.995 161.417C108.537 164.668 97.6837 167.007 86.7601 168.013C63.9113 170.118 46.3032 162.586 33.0737 143.734C21.3582 127.056 13.1131 106.777 11.5526 86.3572C10.8073 76.5566 10.8772 65.7035 15.1628 56.6982C19.8676 46.8275 29.6033 40.8396 38.8732 35.8107C57.2268 25.823 78.0957 20.1391 98.4756 16.0926C118.855 12.0461 143.474 9.19246 165.089 12.9349C186.703 16.6774 196.019 40.6525 200.701 59.5753C206.617 83.4568 202.494 107.549 187.052 126.799C175.779 140.857 177.2 161.019 177.06 178.375C176.99 185.275 187.658 185.275 187.728 178.375L187.751 178.305Z" fill="#050000"/>
@@ -75,38 +75,38 @@ export class ServicioComunicacion extends ServicioWithLinksElement {
       </defs>
       </svg>      
     `,
-      linksService,
-      'left'
-    );
-  }
+			linksService,
+			'left'
+		);
+	}
 
-  override animation(): void {
-    anime
-      .timeline({
-        easing: 'easeInOutSine',
-        direction: 'alternate',
-        loop: true,
-      })
-      .add({
-        targets: '#arrowLine',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: 1500,
-      })
-      .add({
-        targets: '#arrow',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: 500,
-        endDelay: 500,
-      });
-  }
+	override animation(): void {
+		anime
+			.timeline({
+				easing: 'easeInOutSine',
+				direction: 'alternate',
+				loop: true,
+			})
+			.add({
+				targets: '#arrowLine',
+				strokeDashoffset: [anime.setDashoffset, 0],
+				duration: 1500,
+			})
+			.add({
+				targets: '#arrow',
+				strokeDashoffset: [anime.setDashoffset, 0],
+				duration: 500,
+				endDelay: 500,
+			});
+	}
 }
 
 export class ServicioDisenio extends ServicioElement {
-  constructor() {
-    super(
-      PrimaryColor.Dark,
-      SecondaryColor.Orange,
-      `
+	constructor() {
+		super(
+			PrimaryColor.Dark,
+			SecondaryColor.Orange,
+			`
     <svg width="168" height="223" viewBox="0 0 168 223" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_231_362)">
     <path d="M137.211 31.4848C138.481 32.4484 138.452 34.5171 137.493 35.8207C136.533 37.1243 134.953 37.7478 133.401 38.1445C130.917 38.7396 127.898 38.6546 126.261 36.6709C124.822 34.9422 124.991 32.1933 126.346 30.4079C127.728 28.6226 130.071 27.8008 132.3 27.9141C133.937 27.9991 135.574 28.5942 136.703 29.7845C137.832 30.9747 138.34 32.8168 137.69 34.3471" fill="#FF6348"/>
@@ -133,28 +133,28 @@ export class ServicioDisenio extends ServicioElement {
     </defs>
     </svg>
     `
-    );
-  }
+		);
+	}
 
-  override animation(): void {
-    anime({
-      targets: '#idea',
-      strokeDashoffset: [anime.setDashoffset, 0],
-      duration: 1500,
-      easing: 'easeInOutSine',
-      direction: 'alternate',
-      loop: true,
-      endDelay: 500,
-    });
-  }
+	override animation(): void {
+		anime({
+			targets: '#idea',
+			strokeDashoffset: [anime.setDashoffset, 0],
+			duration: 1500,
+			easing: 'easeInOutSine',
+			direction: 'alternate',
+			loop: true,
+			endDelay: 500,
+		});
+	}
 }
 
 export class ServicioCampanias extends ServicioElement {
-  constructor() {
-    super(
-      PrimaryColor.Light,
-      SecondaryColor.Rose,
-      `
+	constructor() {
+		super(
+			PrimaryColor.Light,
+			SecondaryColor.Rose,
+			`
     <svg width="225" height="237" viewBox="0 0 225 237" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_355_186)">
     <path d="M20.0309 215.086C38.5876 191.555 55.2113 162.111 59.3672 131.991C61.4935 116.666 54.6797 105.443 50.693 91.1557C47.2861 78.9195 55.1147 92.6279 57.5309 95.9584C59.3914 98.4925 61.1553 101.34 63.4748 103.488C67.1234 106.843 72.5599 101.413 68.9114 98.0581C63.4748 93.0623 59.4397 80.4158 52.0219 77.93C43.8792 75.2028 41.9462 85.8944 42.9852 91.6383C44.5316 100.303 49.6298 107.977 51.4903 116.593C54.124 128.805 49.8231 141.621 45.8363 153.109C38.7326 173.623 28.0045 192.617 14.5702 209.656C11.5258 213.493 16.9381 218.972 20.0067 215.086H20.0309Z" fill="#050000"/>
@@ -184,27 +184,27 @@ export class ServicioCampanias extends ServicioElement {
     </defs>
     </svg>
     `
-    );
-  }
+		);
+	}
 
-  override animation(): void {
-    anime({
-      targets: '.campanias',
-      opacity: 0,
-      duration: 750,
-      easing: 'easeInOutSine',
-      direction: 'alternate',
-      loop: true,
-    });
-  }
+	override animation(): void {
+		anime({
+			targets: '.campanias',
+			opacity: 0,
+			duration: 750,
+			easing: 'easeInOutSine',
+			direction: 'alternate',
+			loop: true,
+		});
+	}
 }
 
 export class ServicioEventos extends ServicioWithLinksElement {
-  constructor(linksService: LinksService) {
-    super(
-      PrimaryColor.Dark,
-      SecondaryColor.Green,
-      `
+	constructor(linksService: LinksService) {
+		super(
+			PrimaryColor.Dark,
+			SecondaryColor.Green,
+			`
     <svg width="257" height="221" viewBox="0 0 257 221" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_243_321)">
     <path d="M91.3742 92.9119C89.7576 109.04 89.3705 130.688 106.357 139.265C114.303 143.28 123.957 142.482 132.359 140.429C140.761 138.376 147.478 133.426 151.918 126.08C157.315 117.138 158.362 106.439 158.203 96.1968C158.135 91.5432 150.894 91.5204 150.962 96.1968C151.122 105.892 150.256 116.111 144.473 124.255C138.689 132.399 129.741 134.498 120.633 134.84C111.525 135.182 104.512 131.099 100.619 122.795C96.2925 113.557 97.5903 102.721 98.5694 92.9348C99.0248 88.304 91.8069 88.3268 91.3287 92.9348L91.3742 92.9119Z" fill="#FFF9F3"/>
@@ -241,53 +241,53 @@ export class ServicioEventos extends ServicioWithLinksElement {
     </defs>
     </svg>              
     `,
-      linksService,
-      'right'
-    );
-  }
+			linksService,
+			'right'
+		);
+	}
 
-  override animation(): void {
-    this.morph(
-      'M75.5038 37.457H75.0939C74.593 37.457 74.1376 37.5483 73.705 37.7764C73.2496 37.9133 72.8625 38.1642 72.5437 38.5292C72.2022 38.8485 71.9517 39.2363 71.7923 39.6926C71.5646 40.126 71.4508 40.5822 71.4736 41.0841L71.6102 42.0422C71.7923 42.6581 72.0883 43.1828 72.5437 43.639L73.2724 44.2093C73.8416 44.5287 74.4564 44.7112 75.0939 44.7112H75.5038C76.0047 44.7112 76.4601 44.6199 76.8927 44.3918C77.3481 44.2549 77.7352 44.004 78.054 43.639C78.3955 43.3196 78.646 42.9318 78.8054 42.4756C79.0331 42.0422 79.1469 41.586 79.1241 41.0841L78.9875 40.126C78.8054 39.5101 78.5094 38.9854 78.054 38.5292L77.3253 37.9589C76.7561 37.6395 76.1413 37.457 75.5038 37.457Z',
-      'M73.848 34H73.152C72.3015 34 71.5283 34.1635 70.7937 34.5723C70.0205 34.8176 69.3632 35.2673 68.822 35.9214C68.242 36.4937 67.8168 37.1887 67.5461 38.0063C67.1595 38.783 66.9662 39.6006 67.0049 40.5L67.2368 42.217C67.5461 43.3208 68.0487 44.261 68.822 45.0786L70.0591 46.1006C71.0257 46.673 72.0695 47 73.152 47H73.848C74.6985 47 75.4717 46.8365 76.2063 46.4277C76.9795 46.1824 77.6368 45.7327 78.178 45.0786C78.758 44.5063 79.1833 43.8113 79.4539 42.9937C79.8405 42.217 80.0338 41.3994 79.9951 40.5L79.7632 38.783C79.4539 37.6792 78.9513 36.739 78.178 35.9214L76.9409 34.8994C75.9743 34.327 74.9305 34 73.848 34Z',
-      '#eventos1',
-      0
-    );
-    this.morph(
-      'M104.444 44.3005C109.089 44.3005 109.112 37.0464 104.444 37.0464C99.7764 37.0464 99.7764 44.3005 104.444 44.3005Z',
-      'M102.508 47C111.143 47 111.185 34 102.508 34C93.8307 34 93.8307 47 102.508 47Z',
-      '#eventos2',
-      350
-    );
-    this.morph(
-      'M137.073 37.457H136.663C136.162 37.457 135.706 37.5483 135.274 37.7764C134.818 37.9133 134.431 38.1642 134.113 38.5292C133.771 38.8485 133.521 39.2363 133.361 39.6926C133.133 40.126 133.02 40.5822 133.042 41.0841L133.179 42.0422C133.361 42.6581 133.657 43.1828 134.113 43.639L134.841 44.2093C135.41 44.5287 136.025 44.7112 136.663 44.7112H137.073C137.574 44.7112 138.029 44.6199 138.462 44.3918C138.917 44.2549 139.304 44.004 139.623 43.639C139.964 43.3196 140.215 42.9318 140.374 42.4756C140.602 42.0422 140.716 41.586 140.693 41.0841L140.556 40.126C140.374 39.5101 140.078 38.9854 139.623 38.5292L138.894 37.9589C138.325 37.6395 137.71 37.457 137.073 37.457Z',
-      'M134.901 34H134.099C133.117 34 132.225 34.1887 131.377 34.6604C130.485 34.9434 129.727 35.4623 129.102 36.217C128.433 36.8774 127.942 37.6792 127.63 38.6226C127.184 39.5189 126.961 40.4623 127.006 41.5L127.273 43.4811C127.63 44.7547 128.21 45.8396 129.102 46.783L130.53 47.9623C131.645 48.6226 132.849 49 134.099 49H134.901C135.883 49 136.775 48.8113 137.623 48.3396C138.515 48.0566 139.273 47.5377 139.898 46.783C140.567 46.1226 141.058 45.3208 141.37 44.3774C141.816 43.4811 142.039 42.5377 141.994 41.5L141.727 39.5189C141.37 38.2453 140.79 37.1604 139.898 36.217L138.47 35.0377C137.355 34.3774 136.151 34 134.901 34Z',
-      '#eventos3',
-      700
-    );
-    this.morph(
-      'M165.99 44.3005C170.635 44.3005 170.658 37.0464 165.99 37.0464C161.322 37.0464 161.322 44.3005 165.99 44.3005Z',
-      'M164.009 49C173.308 49 173.353 35 164.009 35C154.664 35 154.664 49 164.009 49Z',
-      '#eventos4',
-      1050
-    );
-    this.morph(
-      'M196.524 44.3005C201.169 44.3005 201.192 37.0464 196.524 37.0464C191.856 37.0464 191.856 44.3005 196.524 44.3005Z',
-      'M194.009 48C203.308 48 203.353 33 194.009 33C184.664 33 184.664 48 194.009 48Z',
-      '#eventos5',
-      1400
-    );
-  }
+	override animation(): void {
+		this.morph(
+			'M75.5038 37.457H75.0939C74.593 37.457 74.1376 37.5483 73.705 37.7764C73.2496 37.9133 72.8625 38.1642 72.5437 38.5292C72.2022 38.8485 71.9517 39.2363 71.7923 39.6926C71.5646 40.126 71.4508 40.5822 71.4736 41.0841L71.6102 42.0422C71.7923 42.6581 72.0883 43.1828 72.5437 43.639L73.2724 44.2093C73.8416 44.5287 74.4564 44.7112 75.0939 44.7112H75.5038C76.0047 44.7112 76.4601 44.6199 76.8927 44.3918C77.3481 44.2549 77.7352 44.004 78.054 43.639C78.3955 43.3196 78.646 42.9318 78.8054 42.4756C79.0331 42.0422 79.1469 41.586 79.1241 41.0841L78.9875 40.126C78.8054 39.5101 78.5094 38.9854 78.054 38.5292L77.3253 37.9589C76.7561 37.6395 76.1413 37.457 75.5038 37.457Z',
+			'M73.848 34H73.152C72.3015 34 71.5283 34.1635 70.7937 34.5723C70.0205 34.8176 69.3632 35.2673 68.822 35.9214C68.242 36.4937 67.8168 37.1887 67.5461 38.0063C67.1595 38.783 66.9662 39.6006 67.0049 40.5L67.2368 42.217C67.5461 43.3208 68.0487 44.261 68.822 45.0786L70.0591 46.1006C71.0257 46.673 72.0695 47 73.152 47H73.848C74.6985 47 75.4717 46.8365 76.2063 46.4277C76.9795 46.1824 77.6368 45.7327 78.178 45.0786C78.758 44.5063 79.1833 43.8113 79.4539 42.9937C79.8405 42.217 80.0338 41.3994 79.9951 40.5L79.7632 38.783C79.4539 37.6792 78.9513 36.739 78.178 35.9214L76.9409 34.8994C75.9743 34.327 74.9305 34 73.848 34Z',
+			'#eventos1',
+			0
+		);
+		this.morph(
+			'M104.444 44.3005C109.089 44.3005 109.112 37.0464 104.444 37.0464C99.7764 37.0464 99.7764 44.3005 104.444 44.3005Z',
+			'M102.508 47C111.143 47 111.185 34 102.508 34C93.8307 34 93.8307 47 102.508 47Z',
+			'#eventos2',
+			350
+		);
+		this.morph(
+			'M137.073 37.457H136.663C136.162 37.457 135.706 37.5483 135.274 37.7764C134.818 37.9133 134.431 38.1642 134.113 38.5292C133.771 38.8485 133.521 39.2363 133.361 39.6926C133.133 40.126 133.02 40.5822 133.042 41.0841L133.179 42.0422C133.361 42.6581 133.657 43.1828 134.113 43.639L134.841 44.2093C135.41 44.5287 136.025 44.7112 136.663 44.7112H137.073C137.574 44.7112 138.029 44.6199 138.462 44.3918C138.917 44.2549 139.304 44.004 139.623 43.639C139.964 43.3196 140.215 42.9318 140.374 42.4756C140.602 42.0422 140.716 41.586 140.693 41.0841L140.556 40.126C140.374 39.5101 140.078 38.9854 139.623 38.5292L138.894 37.9589C138.325 37.6395 137.71 37.457 137.073 37.457Z',
+			'M134.901 34H134.099C133.117 34 132.225 34.1887 131.377 34.6604C130.485 34.9434 129.727 35.4623 129.102 36.217C128.433 36.8774 127.942 37.6792 127.63 38.6226C127.184 39.5189 126.961 40.4623 127.006 41.5L127.273 43.4811C127.63 44.7547 128.21 45.8396 129.102 46.783L130.53 47.9623C131.645 48.6226 132.849 49 134.099 49H134.901C135.883 49 136.775 48.8113 137.623 48.3396C138.515 48.0566 139.273 47.5377 139.898 46.783C140.567 46.1226 141.058 45.3208 141.37 44.3774C141.816 43.4811 142.039 42.5377 141.994 41.5L141.727 39.5189C141.37 38.2453 140.79 37.1604 139.898 36.217L138.47 35.0377C137.355 34.3774 136.151 34 134.901 34Z',
+			'#eventos3',
+			700
+		);
+		this.morph(
+			'M165.99 44.3005C170.635 44.3005 170.658 37.0464 165.99 37.0464C161.322 37.0464 161.322 44.3005 165.99 44.3005Z',
+			'M164.009 49C173.308 49 173.353 35 164.009 35C154.664 35 154.664 49 164.009 49Z',
+			'#eventos4',
+			1050
+		);
+		this.morph(
+			'M196.524 44.3005C201.169 44.3005 201.192 37.0464 196.524 37.0464C191.856 37.0464 191.856 44.3005 196.524 44.3005Z',
+			'M194.009 48C203.308 48 203.353 33 194.009 33C184.664 33 184.664 48 194.009 48Z',
+			'#eventos5',
+			1400
+		);
+	}
 
-  morph(initial: string, path: string, target: string, delay: number) {
-    anime({
-      targets: target,
-      duration: 700,
-      easing: 'linear',
-      loop: true,
-      delay: delay,
-      endDelay: 1400 - delay,
-      d: [{ value: path }, { value: initial }],
-    });
-  }
+	morph(initial: string, path: string, target: string, delay: number) {
+		anime({
+			targets: target,
+			duration: 700,
+			easing: 'linear',
+			loop: true,
+			delay: delay,
+			endDelay: 1400 - delay,
+			d: [{ value: path }, { value: initial }],
+		});
+	}
 }

@@ -1,85 +1,83 @@
 .circle-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  padding-bottom: 7%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+	padding-bottom: 7%;
 }
 
 .main-circle {
-  width: 25%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  position: relative;
+	width: 25%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	position: relative;
 }
 
 .circle {
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-  border: 3px solid;
-  position: absolute;
-  z-index: 2;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	border: 3px solid;
+	position: absolute;
+	z-index: 2;
 }
 
 .top {
-  top: -1.5em;
-  left: 50%;
-  transform: translateX(-50%);
+	top: -1.5em;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .right {
-  right: -1.5em;
-  top: 50%;
-  transform: translateY(-50%);
+	right: -1.5em;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .bottom {
-  bottom: -1.5em;
-  left: 50%;
-  transform: translateX(-50%);
+	bottom: -1.5em;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .left {
-  left: -1.5em;
-  top: 50%;
-  transform: translateY(-50%);
+	left: -1.5em;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .filled-transition {
-  transition: all 0.4s ease;
+	transition: all 0.4s ease;
 }
 
 .morph {
-  position: absolute;
-  width: 23%;
-  aspect-ratio: 1 / 1;
+	position: absolute;
+	width: 23%;
+	aspect-ratio: 1 / 1;
 }
 
 @media screen and (max-width: 1023px) {
-  .main-circle {
-    width: 100%;
-  }
+	.main-circle {
+		width: 100%;
+	}
 
-  .circle {
-    display: none;
-  }
+	.circle {
+		display: none;
+	}
 
-  .morph {
-    width: 60%;
-    margin-bottom: 2rem;
-  }
+	.morph {
+		width: 60%;
+		margin-bottom: 2rem;
+	}
 }
 
-.projected-content{
-  position: absolute;
-  z-index: 3;
+.projected-content {
+	position: absolute;
+	z-index: 3;
 }
-
-

@@ -1,1 +1,1 @@
-export const MAX_VIEWPORT_MOBILE = 1023
+export const MAX_VIEWPORT_MOBILE = 1023;

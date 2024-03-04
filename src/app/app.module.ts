@@ -1,5 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +24,7 @@ import { SafeHtmlPipe } from './utils/safe-html.pipe';
 import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mobile.component';
 import { ConfigService } from './services/config.service';
 import { LoaderComponent } from './components/loader/loader.component';
+import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
 
 export function LoadConfiguration(configService: ConfigService) {
   return () => configService.load();
@@ -44,9 +46,10 @@ export function LoadConfiguration(configService: ConfigService) {
     ServiciosNavComponent,
     SafeHtmlPipe,
     ServiciosMobileComponent,
-    LoaderComponent
+    LoaderComponent,
+    NewsletterPopupComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule],
   providers: [
     ConfigService,
     {

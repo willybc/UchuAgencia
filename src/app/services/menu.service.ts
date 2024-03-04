@@ -2,31 +2,31 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class MenuService {
-  private wallColorSubject = new BehaviorSubject<string>('');
-  public wallColor$ = this.wallColorSubject.asObservable();
+	private wallColorSubject = new BehaviorSubject<string>('');
+	public wallColor$ = this.wallColorSubject.asObservable();
 
-  changeWallColor(color: string): void {
-    this.wallColorSubject.next(color);
-  }
+	changeWallColor(color: string): void {
+		this.wallColorSubject.next(color);
+	}
 
-  private closeMenuSubject = new Subject<void>();
+	private closeMenuSubject = new Subject<void>();
 
-  closeMenu$ = this.closeMenuSubject.asObservable();
+	closeMenu$ = this.closeMenuSubject.asObservable();
 
-  closeMenu() {
-    this.closeMenuSubject.next();
-  }
+	closeMenu() {
+		this.closeMenuSubject.next();
+	}
 
-  private menuState = new BehaviorSubject<boolean>(false);
+	private menuState = new BehaviorSubject<boolean>(false);
 
-  getMenuState() {
-    return this.menuState.asObservable();
-  }
+	getMenuState() {
+		return this.menuState.asObservable();
+	}
 
-  setMenuState(state: boolean) {
-    this.menuState.next(state);
-  }
+	setMenuState(state: boolean) {
+		this.menuState.next(state);
+	}
 }
