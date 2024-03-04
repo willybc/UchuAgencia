@@ -151,6 +151,10 @@
 	height: 100%;
 }
 
+.itsMobile {
+	display: none;
+}
+
 @media screen and (max-width: 1023px) {
 	.markers {
 		margin-bottom: 4.3rem;
@@ -225,6 +229,28 @@
 
 	.services-services li:not(:last-child) {
 		margin-bottom: 0.7rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.arrow {
+		position: absolute;
+		bottom: 0%;
+		left: 48%;
+		transform: translateY(-50%) rotate(90deg);
+		width: 7%;
+	}
+
+	/* .arrow path {
+		fill: var(--yellow) !important;
+	} */
+
+	.markers {
+		display: none;
+	}
+
+	.itsMobile {
+		display: block;
 	}
 }
 

@@ -66,8 +66,14 @@ h1 {
 
 .arrow {
 	position: relative;
-	bottom: 15%;
+	bottom: 40%;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateY(-50%) rotate(-90deg);
 	width: 9%;
+}
+
+@media (max-width: 768px) {
+	/* .arrow path {
+		fill: var(--yellow) !important;
+	} */
 }

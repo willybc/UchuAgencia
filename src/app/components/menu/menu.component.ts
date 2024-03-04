@@ -139,7 +139,6 @@ export class MenuComponent {
 					this.linksService.changeLeftColor(PrimaryColor.Light);
 				}
 				else {
-
 					this.linksService.changeLeftColor(PrimaryColor.Dark);
 				}
 				// Cambia el estado del menú después de la animación

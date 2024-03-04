@@ -10,6 +10,7 @@ import {
 	opositeColor,
 } from 'src/app/utils/color';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 import {
 	ServicioCampanias,
 	ServicioComunicacion,
@@ -52,7 +53,8 @@ export class ServiciosComponent {
 		private circleService: CircleService,
 		private linksService: LinksService,
 		private menuService: MenuService,
-		private navService: NavigationService
+		private navService: NavigationService,
+		private router: Router
 	) {}
 
 	ngOnInit() {
@@ -75,6 +77,7 @@ export class ServiciosComponent {
 
 		this.navService.changeSectionNavigate.subscribe(index => {
 			if (index != null) {
+				console.log("HIJO, 81", index) 
 				this.navigate(index);
 			}
 		});
@@ -110,8 +113,11 @@ export class ServiciosComponent {
 				svg.setAttribute('width', '100%');
 				svg.setAttribute('height', '100%');
 			} else {
-				svg.setAttribute('width', '50% !important');
-				svg.setAttribute('height', 'auto');
+				/* svg.setAttribute('width', '50% !important'); */
+				svg.setAttribute('width', '50%');
+				svg.style.width = '50%';
+				/* svg.setAttribute('height', 'auto'); */
+				svg.style.height = 'auto';
 			}
 		});
 	}
@@ -303,6 +309,20 @@ export class ServiciosComponent {
 		this.index = index;
 		this.scrollService.notifyIsNotTransitioning();
 	}
+
+	goBack(index: number) {
+		this.router.navigate(['/servicios/mobile'], { queryParams: { index: index } });
+	}
+
+	goBackToParentSection(index: number) {
+		this.navService.setPadreSectionNavigate(index);
+		this.router.navigate(['/servicios/mobile']);
+	  }
+
+	  goBackService(index: number) {
+		this.navService.setPadreSectionNavigate(index)
+		this.router.navigate(['/servicios/mobile']);
+	  }
 
 	isCurrentIndex(i: number) {
 		return i == this.index;

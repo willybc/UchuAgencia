@@ -31,9 +31,10 @@ export class LogoComponent {
 	goToHome() {
 		this.linksService.changeLeftColor(PrimaryColor.Dark);
 		this.linksService.changeRightColor(PrimaryColor.Light);
-		this.router.navigate(['/']);
+		window.location.href = '/';
+	  
 		if (this.menuOpened) {
-			this.menuService.closeMenu();
+		  this.menuService.closeMenu();
 		}
-	}
+	  }
 }

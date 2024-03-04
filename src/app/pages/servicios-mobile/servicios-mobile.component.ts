@@ -1,9 +1,10 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ElementRef } from '@angular/core';
 import { LinksService } from 'src/app/services/links.service';
 import { PrimaryColor, SecondaryColor } from 'src/app/utils/color';
 import anime from 'animejs/lib/anime.es.js';
 import { NavigationService } from 'src/app/services/navigation.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ColorService } from 'src/app/services/color.service';
 
 @Component({
 	selector: 'app-servicios-mobile',
@@ -19,17 +20,68 @@ export class ServiciosMobileComponent {
 	logoColor = '#FFFAF3';
 
 	constructor(
+		private route: ActivatedRoute,
 		private linksService: LinksService,
 		private navService: NavigationService,
-		private router: Router
+		private router: Router,
+		private elementRef: ElementRef,
+		private colorService: ColorService
 	) {}
 
 	ngOnInit() {
 		this.index = 0;
 		this.translate = 0;
 
+		const color = this.colorService.getColor(this.index);
+		if (color) {
+			this.linksColor = color;
+		}
+
 		this.linksService.changeLeftColor(PrimaryColor.Light);
 		this.linksService.changeRightColor(PrimaryColor.Light);
+
+		this.linksService.leftColor$.subscribe(color => {
+			this.logoColor = color;
+		});
+
+		this.navService.changePadreSectionNavigate.subscribe(index => {
+			if (index != null) {
+				console.log('volvio al PADRE', index + 1);
+				this.navigate(index + 1);
+			}
+		});
+	}
+
+	ngAfterViewInit() {
+
+		this.linksService.leftColor$.subscribe(color => {
+			if(this.index === 0 || this.index === 2 || this.index === 4){
+				this.linksColor = PrimaryColor.Light;
+			}else{
+				this.linksColor = PrimaryColor.Dark;
+			}
+		});
+
+		this.linksService.changeLeftColor(this.linksColor);
+		this.linksService.changeRightColor(this.linksColor);
+		console.log('color', this.linksColor);
+	}
+
+	navigate(index: number) {
+		this.index = index;
+
+		setTimeout(() => {
+			const sectionId = `section-${this.index}`;
+			const targetSection = document.getElementById(sectionId);
+			if (targetSection) {
+				targetSection.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				});
+			}
+		}, 100);
+
+		this.setColor(this.index);
 	}
 
 	yDown!: number | null;
@@ -76,16 +128,16 @@ export class ServiciosMobileComponent {
 	}
 
 	isEven(i: number) {
-		return i == 0 || i == 2;
+		return i == 0 || i == 2 || i == 4;
 	}
 
 	setColor(i: number) {
 		if (this.isEven(i)) {
 			this.linksColor = PrimaryColor.Light;
-			this.logoColor = '#FFFAF3';
+			this.logoColor = '#030202';
 		} else {
 			this.linksColor = PrimaryColor.Dark;
-			this.logoColor = '#030202';
+			this.logoColor = '#FFFAF3';
 		}
 
 		this.linksService.changeLeftColor(this.linksColor);
