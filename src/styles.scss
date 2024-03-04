@@ -121,3 +121,20 @@ transform-origin: 0 0; /* see note above */
 .ldio-q2nyb5c78nn div {
 box-sizing: content-box;
 }
+
+.container-loading img {
+    height: 70vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .container-loading img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-loading img {
+        height: 38vh;
+    }
+}
+

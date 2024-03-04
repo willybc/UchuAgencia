@@ -1,0 +1,15 @@
+.container-loading img {
+    height: 70vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .container-loading img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-loading img {
+        height: 38vh;
+    }
+}
