@@ -232,6 +232,12 @@
 	}
 }
 
+@media (min-width: 768px) {
+	.arrow {
+		display: none !important;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.arrow {
 		position: absolute;
