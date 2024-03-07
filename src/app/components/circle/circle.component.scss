@@ -77,6 +77,15 @@
 	}
 }
 
+/* @media screen and (max-width: 768px) {
+	.projected-content {
+		height: 35%;
+		display: flex;
+		align-items: center;
+		justify-self: center;
+	}
+} */
+
 .projected-content {
 	position: absolute;
 	z-index: 3;
