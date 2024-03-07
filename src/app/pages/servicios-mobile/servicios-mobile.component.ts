@@ -46,32 +46,37 @@ export class ServiciosMobileComponent {
 
 		this.navService.changePadreSectionNavigate.subscribe(index => {
 			if (index != null) {
-				console.log('volvio al PADRE', index + 1);
-				this.navigate(index + 1);
+				this.index = index;
+				console.log('volvio al PADRE', index);
+				this.navigate(index);
+				this.setColor(index);
+
+			}
+			else {
+				console.log("index es null");
 			}
 		});
+
+		
 	}
 
 	ngAfterViewInit() {
-
 		this.linksService.leftColor$.subscribe(color => {
-			if(this.index === 0 || this.index === 2 || this.index === 4){
+			if (this.index === 0 || this.index === 2 || this.index === 4) {
 				this.linksColor = PrimaryColor.Light;
-			}else{
+			} else {
 				this.linksColor = PrimaryColor.Dark;
 			}
 		});
 
 		this.linksService.changeLeftColor(this.linksColor);
 		this.linksService.changeRightColor(this.linksColor);
-		console.log('color', this.linksColor);
 	}
 
 	navigate(index: number) {
-		this.index = index;
 
 		setTimeout(() => {
-			const sectionId = `section-${this.index}`;
+			const sectionId = `section-${index}`;
 			const targetSection = document.getElementById(sectionId);
 			if (targetSection) {
 				targetSection.scrollIntoView({
@@ -80,8 +85,6 @@ export class ServiciosMobileComponent {
 				});
 			}
 		}, 100);
-
-		this.setColor(this.index);
 	}
 
 	yDown!: number | null;

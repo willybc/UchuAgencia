@@ -246,12 +246,13 @@ export class ServiciosComponent {
 	}
 
 	setColor(i: number) {
-		if (i == 0 || i == 2) {
+		if (i == 0 || i == 2 || i == 4) {
 			this.linksColor = PrimaryColor.Light;
 		} else {
 			this.linksColor = PrimaryColor.Dark;
 		}
 	}
+	
 
 	changeSection(i: number = this.nextIndex) {
 		this.linksService.changeLeftColor(this.linksColor);
