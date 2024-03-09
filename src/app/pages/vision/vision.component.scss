@@ -186,7 +186,7 @@
 	}
 }	
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 852px) {
 	.bottom-animation {
 		height: 7rem;
 	}
@@ -202,5 +202,16 @@
 
 	.vision-top p {
 		width: 42%;
+	}
+}
+
+@media screen and (max-width: 442px) {
+	.up-container {
+		height: 8rem;
+	}
+
+	.up-container p,
+	.down-container p {
+		font-size: 2.7rem;
 	}
 }
