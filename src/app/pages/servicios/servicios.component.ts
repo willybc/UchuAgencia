@@ -170,6 +170,7 @@ export class ServiciosComponent {
 			const yUp = e.touches[0].clientY;
 			const yDiff = this.yDown! - yUp;
 
+			
 			if (Math.abs(xDiff) > Math.abs(yDiff)) {
 				if (xDiff > 0) {
 					if (this.index + 1 <= this.lenght) {
@@ -186,12 +187,17 @@ export class ServiciosComponent {
 				}
 			} else {
 				if (yDiff > 0) {
+					/* onTouchMove up */
 					if (this.index + 1 <= this.lenght) {
+						if(this.index == 3) {
+							return;
+						}
 						this.nextIndex = this.index + 1;
 					} else {
 						return;
 					}
 				} else {
+					/* onTouchMove down */
 					if (this.index - 1 >= 0) {
 						this.nextIndex = this.index - 1;
 					} else {
