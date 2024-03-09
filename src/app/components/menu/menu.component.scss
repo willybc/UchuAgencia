@@ -509,3 +509,9 @@
 		bottom: 0;
 	}
 }
+
+@media screen and (max-height: 736px) and (max-width: 852px){
+	.menu-btn {
+		top: 3.5rem;
+	}
+}

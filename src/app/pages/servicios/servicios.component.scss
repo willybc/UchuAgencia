@@ -238,13 +238,13 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 852px) {
 	.arrow {
 		display: none !important;
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 852px) {
 	.arrow {
 		position: absolute;
 		bottom: 0%;
@@ -278,5 +278,11 @@
 @media screen and (max-width: 378px) {
 	.services-main-info {
 		margin-bottom: 6rem;
+	}
+}
+
+@media screen and (max-height: 720px) and (max-width: 852px){
+	.services-main-info {
+		margin-bottom: 4rem;
 	}
 }
