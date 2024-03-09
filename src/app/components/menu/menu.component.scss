@@ -302,13 +302,15 @@
 
 			h5 {
 				color: #FFF9F3;
-				font-size: 20px;
+				font-size: 4.5vw;
 				font-weight: 500;
 			}
 
 			.menu-mobile-items h3 {
 				font-weight: bold;
-				font-size: 65px;
+				/* medida figma
+				font-size: 17vw; */
+				font-size: 10vw;
 			}
 
 			.menu-mobile-items h3 a {
@@ -339,9 +341,11 @@
 			justify-content: space-evenly;
 			align-items: center;
 
+			gap: 1rem;
+
 			h5 {
 				color: #050000;
-				font-size: 20px;
+				font-size: 4.5vw;
 				font-weight: 500;
 			}
 
@@ -352,13 +356,13 @@
 
 			.contact-email {
 				font-weight: bold;
-				font-size: 30px;
+				font-size: 6vw;
 			}
 
 			.menu-mobile-redes {
 				display: flex;
 				font-weight: 500;
-				font-size: 20px;
+				font-size: 4.5vw;
 				color: #050000;
 			}
 
@@ -366,7 +370,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				justify-content: space-around;
+				/* justify-content: space-around; */
 				text-align: center;
 
 				height: 50%;
@@ -376,7 +380,12 @@
 				display: flex;
 				height: 50%;
 				align-items: center;
+
+				svg {
+					height: 5rem;
+				}
 			}
+
 		}
 
 
@@ -512,6 +521,10 @@
 
 @media screen and (max-height: 736px) and (max-width: 852px){
 	.menu-btn {
-		top: 3.5rem;
+		top: 4rem;
+	}
+
+	.menu-btn-icon-mobile {
+		width: 2.7rem;
 	}
 }
