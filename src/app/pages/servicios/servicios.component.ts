@@ -136,12 +136,17 @@ export class ServiciosComponent {
 	onWheel(e: WheelEvent) {
 		if (!this.isTransitioning) {
 			if (e.deltaY > 0) {
+				/* scroll up */
 				if (this.index + 1 <= this.lenght) {
+					if(this.index == 3) {
+						return;
+					}
 					this.nextIndex = this.index + 1;
 				} else {
 					return;
 				}
 			} else if (e.deltaY < 0) {
+				/* scroll down */
 				if (this.index - 1 >= 0) {
 					this.nextIndex = this.index - 1;
 				} else {
@@ -169,7 +174,6 @@ export class ServiciosComponent {
 			const xDiff = this.xDown! - xUp;
 			const yUp = e.touches[0].clientY;
 			const yDiff = this.yDown! - yUp;
-
 			
 			if (Math.abs(xDiff) > Math.abs(yDiff)) {
 				if (xDiff > 0) {
