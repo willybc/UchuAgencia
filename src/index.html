@@ -1,22 +1,24 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Uchu</title>
-        <base href="/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        />
-    </head>
-    <body>
-        <app-root>
-            <div class="container-loading">
-                <img src="assets/UCHU.gif" alt="">
-            </div>
-        </app-root>
-    </body>
-
+	<head>
+		<meta charset="utf-8" />
+		<title>Uchu</title>
+		<base href="/" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+	</head>
+	<body>
+		<app-root>
+			<div class="container-loading">
+				<video autoplay playsinline muted loop (click)="toggleVideo()" >
+					<source src="assets/UCHU2.webm" />
+					Browser not supported
+				</video>
+				<!-- <img id="loading-gif" src="assets/UCHU.gif" alt="" /> -->
+			</div>
+		</app-root>
+	</body>
 </html>

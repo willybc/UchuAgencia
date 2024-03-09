@@ -126,15 +126,27 @@ box-sizing: content-box;
     height: 70vh;
 }
 
+.container-loading video {
+	height: 70vh;
+}
+
 @media screen and (max-width: 1200px) {
     .container-loading img {
         height: 60vh;
     }
+
+	.container-loading video {
+		height: 60vh;
+	}
 }
 
 @media screen and (max-width: 768px) {
     .container-loading img {
         height: 38vh;
     }
+
+	.container-loading video {
+		height: 38vh;
+	}
 }
 
