@@ -32,10 +32,15 @@ export class LogoComponent {
 				});
 			}
 			else {
-				this.linksService.rightColor$.subscribe(color => {
-					this.logoColor = color;
-					/* console.log("entre a checkResolution", this.logoColor) */
-				});
+				if(this.rootURL === '/') {
+					this.linksService.leftColor$.subscribe(color => {
+						this.logoColor = PrimaryColor.Dark;
+					});
+				}else {
+					this.linksService.rightColor$.subscribe(color => {
+						this.logoColor = color;
+					});
+				}
 
 			}
 		} else {
@@ -82,8 +87,11 @@ export class LogoComponent {
 		this.linksService.leftColor$.subscribe(color => {
 			this.logoColor = color;
 		});
+		*/
 
-		this.linksService.changeLeftColor(PrimaryColor.Light); */
+		if(this.rootURL === '/vision' || this.rootURL === '/servicios/mobile' || this.rootURL === '/servicios') {
+			this.linksService.changeLeftColor(PrimaryColor.Dark);
+		} 
 
 
 		/* this.linksService.changeRightColor(PrimaryColor.Dark); */
