@@ -25,7 +25,7 @@ export class LogoComponent {
 	}
 
 	checkResolution() {
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 852) {
 			if(this.rootURL === '/vision' || this.rootURL === '/servicios/mobile') {
 				this.linksService.leftColor$.subscribe(color => {
 					this.logoColor = PrimaryColor.Light;

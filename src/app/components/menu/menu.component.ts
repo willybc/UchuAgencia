@@ -43,7 +43,7 @@ export class MenuComponent {
 	) {}
 
 	checkResolution() {
-		if (window.innerWidth < 768) {
+		if (window.innerWidth < 852) {
 			this.spanColor = PrimaryColor.Dark;
 		} else {
 			this.spanColor = PrimaryColor.Light;
@@ -75,10 +75,6 @@ export class MenuComponent {
 		this.checkResolution();
 
 	}
-
-	toggleNewsletterPopup() {
-		this.showNewsletterPopup = !this.showNewsletterPopup;
-	  }
 
 	goTo(page: string, color: string) {
 		this.router.navigate([page]);

@@ -520,11 +520,15 @@
 }
 
 @media screen and (max-height: 736px) and (max-width: 852px){
+	:root {
+		--height: 0.4rem;
+	}
+
 	.menu-btn {
 		top: 4rem;
 	}
 
 	.menu-btn-icon-mobile {
-		width: 2.7rem;
+		width: 2.4rem;
 	}
 }

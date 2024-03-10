@@ -11,7 +11,7 @@ export class HomeComponent {
 	onMobile: boolean = false;
 
 	constructor(private linksService: LinksService) {
-		this.onMobile = window.innerWidth < 768;
+		this.onMobile = window.innerWidth < 852;
 	}
 
 	ngOnInit() {
@@ -29,7 +29,7 @@ export class HomeComponent {
 
 	@HostListener('window:resize', ['$event'])
 	onResize() {
-		this.onMobile = window.innerWidth < 768;
+		this.onMobile = window.innerWidth < 852;
 		this.actualizarColores();
 	}
 }

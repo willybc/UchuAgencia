@@ -91,16 +91,24 @@
 .background {
 	width: 14%;
 	height: 100%;
-	background-color: var(--primary-dark);
+	background-color: linear-gradient(to right, var(--primary-light) 0%, var(--primary-light) 50%, var(--primary-dark) 50%, var(--primary-dark) 100%);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 1023px) {
+	.background-container {
+		display: none;
+	}
+}
+
+
+
+@media (max-width: 852px) {
 	.content-left {
-		height: 40%;
+		height: 50%;
 	}
 
 	.content-right {
-		height: 60%;
+		height: 50%;
 	}
 
     .content-left,
@@ -113,7 +121,7 @@
         bottom: auto;
 
 		h1 {
-			font-size: 60px;
+			font-size: 12vw;
 		}
 
 		.container-vision-mobile {
@@ -128,7 +136,7 @@
         bottom: 0;
 
 		h1 {
-			font-size: 60px;
+			font-size: 12vw;
 		}
     }
 

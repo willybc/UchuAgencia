@@ -16,6 +16,10 @@
 }
 
 @media screen and (max-width: 1023px) {
+	.canvas-container {
+		display: none;
+	}
+
 	#wave-card-canvas {
 		width: 15%;
 		background: linear-gradient(
@@ -28,7 +32,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 852px) {
 	canvas {
 		background: none;
 	}
