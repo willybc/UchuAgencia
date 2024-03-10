@@ -1,4 +1,9 @@
-import { Component, ViewEncapsulation, ElementRef, ViewChild } from '@angular/core';
+import {
+	Component,
+	ViewEncapsulation,
+	ElementRef,
+	ViewChild,
+} from '@angular/core';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { LinksService } from 'src/app/services/links.service';
@@ -10,6 +15,7 @@ import {
 	opositeColor,
 } from 'src/app/utils/color';
 import { MAX_VIEWPORT_MOBILE } from 'src/app/utils/other';
+import { IndexService } from 'src/app/services/index.service';
 
 @Component({
 	selector: 'app-menu',
@@ -39,7 +45,8 @@ export class MenuComponent {
 		private location: Location,
 		private linksService: LinksService,
 		private scrollService: ScrollService,
-		private menuService: MenuService
+		private menuService: MenuService,
+		private indexService: IndexService
 	) {}
 
 	checkResolution() {
@@ -73,6 +80,7 @@ export class MenuComponent {
 		});
 
 		this.checkResolution();
+
 
 	}
 
@@ -119,7 +127,7 @@ export class MenuComponent {
 		}
 	}
 
-	menuMobileAbierto: boolean = false
+	menuMobileAbierto: boolean = false;
 
 	@ViewChild('menuContainer') menuContainer!: ElementRef;
 
@@ -129,10 +137,33 @@ export class MenuComponent {
 			// Ejecuta la animación de cerrar
 			this.animateCerrarMenu(() => {
 				// Después de la animación, cambia el color del menú
-				console.log(this.rootURL)
-				if(this.rootURL === '/vision' || this.rootURL === '/servicios/mobile') {
+				console.log(this.rootURL);
+				if (this.rootURL === '/vision') {
 					this.linksService.changeRightColor(PrimaryColor.Light);
 					this.linksService.changeLeftColor(PrimaryColor.Light);
+				} 
+				else if(this.rootURL === '/servicios/mobile') {
+					const currentIndex = this.indexService.getIndex();
+					if (currentIndex === 0 || currentIndex === 2 || currentIndex === 4) {
+						this.linksService.changeRightColor(PrimaryColor.Light);
+						this.linksService.changeLeftColor(PrimaryColor.Light);
+					}
+					else {
+						this.linksService.changeRightColor(PrimaryColor.Dark);
+						this.linksService.changeLeftColor(PrimaryColor.Dark);
+					}
+				}
+				else if (this.rootURL === '/servicios' && window.innerWidth < 852) {
+					const currentIndexService = this.indexService.getIndexService();
+					console.log("entre en servicios", currentIndexService);
+					if (currentIndexService === 0 || currentIndexService === 2 || currentIndexService === 4) {
+						this.linksService.changeRightColor(PrimaryColor.Light);
+						this.linksService.changeLeftColor(PrimaryColor.Light);
+					}
+					else {
+						this.linksService.changeRightColor(PrimaryColor.Dark);
+						this.linksService.changeLeftColor(PrimaryColor.Dark);
+					}
 				}
 				else {
 					this.linksService.changeLeftColor(PrimaryColor.Dark);
@@ -143,7 +174,6 @@ export class MenuComponent {
 		} else {
 			// Si el menú está cerrado y va a abrirse
 			// Cambia el color del menú
-			console.log("menu estaba cerrado y se abrio")
 			this.linksService.changeLeftColor(PrimaryColor.Light);
 			this.linksService.changeRightColor(PrimaryColor.Light);
 			this.spanColor = PrimaryColor.Dark;
@@ -151,24 +181,23 @@ export class MenuComponent {
 			this.menuMobileAbierto = !this.menuMobileAbierto;
 		}
 	}
-	
+
 	animateCerrarMenu(callback: () => void) {
 		// Agrega una clase para iniciar la animación de cerrar
 		// Supongamos que tienes una clase llamada "cerrando-menu" que realiza la animación
 		// Reemplaza "cerrando-menu" con el nombre de tu clase de animación
-		this.menuContainer!.nativeElement.classList.add("cerrado");
-	
+		this.menuContainer!.nativeElement.classList.add('cerrado');
+
 		// Espera un tiempo suficiente para que la animación se complete
 		setTimeout(() => {
 			// Remueve la clase de animación después de que termine la animación
 			// Supongamos que tienes una clase llamada "cerrando-menu" que realiza la animación
 			// Reemplaza "cerrando-menu" con el nombre de tu clase de animación
-			this.menuContainer!.nativeElement.classList.remove("cerrado");
+			this.menuContainer!.nativeElement.classList.remove('cerrado');
 			// Ejecuta la función de callback después de la animación
 			callback();
 		}, 500); // Ajusta este valor al tiempo de duración de tu animación
 	}
-
 
 	toggleMenu() {
 		const leftCard = document.getElementById('left-card') as HTMLElement;

@@ -5,6 +5,7 @@ import anime from 'animejs/lib/anime.es.js';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ColorService } from 'src/app/services/color.service';
+import { IndexService } from 'src/app/services/index.service';
 
 @Component({
 	selector: 'app-servicios-mobile',
@@ -25,7 +26,8 @@ export class ServiciosMobileComponent {
 		private navService: NavigationService,
 		private router: Router,
 		private elementRef: ElementRef,
-		private colorService: ColorService
+		private colorService: ColorService,
+		private indexService: IndexService
 	) {}
 
 	ngOnInit() {
@@ -47,17 +49,14 @@ export class ServiciosMobileComponent {
 		this.navService.changePadreSectionNavigate.subscribe(index => {
 			if (index != null) {
 				this.index = index;
+				this.indexService.setIndex(this.index);
 				console.log('volvio al PADRE', index);
 				this.navigate(index);
 				this.setColor(index);
-
-			}
-			else {
-				console.log("index es null");
+			} else {
+				console.log('index es null');
 			}
 		});
-
-		
 	}
 
 	ngAfterViewInit() {
@@ -74,7 +73,6 @@ export class ServiciosMobileComponent {
 	}
 
 	navigate(index: number) {
-
 		setTimeout(() => {
 			const sectionId = `section-${index}`;
 			const targetSection = document.getElementById(sectionId);
@@ -135,6 +133,7 @@ export class ServiciosMobileComponent {
 	}
 
 	setColor(i: number) {
+		console.log('entre al index del hijo con', i);
 		if (this.isEven(i)) {
 			this.linksColor = PrimaryColor.Light;
 			this.logoColor = '#030202';

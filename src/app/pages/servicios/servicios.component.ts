@@ -20,6 +20,7 @@ import {
 import anime from 'animejs/lib/anime.es.js';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { MAX_VIEWPORT_MOBILE } from 'src/app/utils/other';
+import { IndexService } from 'src/app/services/index.service';
 
 @Component({
 	selector: 'app-servicios',
@@ -54,7 +55,8 @@ export class ServiciosComponent {
 		private linksService: LinksService,
 		private menuService: MenuService,
 		private navService: NavigationService,
-		private router: Router
+		private router: Router,
+		private indexService: IndexService
 	) {}
 
 	ngOnInit() {
@@ -78,6 +80,7 @@ export class ServiciosComponent {
 		this.navService.changeSectionNavigate.subscribe(index => {
 			if (index != null) {
 				console.log("HIJO, 81", index) 
+				this.indexService.setIndexService(index);
 				this.navigate(index);
 			}
 		});
@@ -142,6 +145,7 @@ export class ServiciosComponent {
 						return;
 					}
 					this.nextIndex = this.index + 1;
+					this.indexService.setIndexService(this.nextIndex);
 				} else {
 					return;
 				}
@@ -149,6 +153,7 @@ export class ServiciosComponent {
 				/* scroll down */
 				if (this.index - 1 >= 0) {
 					this.nextIndex = this.index - 1;
+					this.indexService.setIndexService(this.nextIndex);
 				} else {
 					return;
 				}
@@ -197,6 +202,7 @@ export class ServiciosComponent {
 							return;
 						}
 						this.nextIndex = this.index + 1;
+						this.indexService.setIndexService(this.nextIndex);
 					} else {
 						return;
 					}
@@ -204,6 +210,7 @@ export class ServiciosComponent {
 					/* onTouchMove down */
 					if (this.index - 1 >= 0) {
 						this.nextIndex = this.index - 1;
+						this.indexService.setIndexService(this.nextIndex);
 					} else {
 						return;
 					}
