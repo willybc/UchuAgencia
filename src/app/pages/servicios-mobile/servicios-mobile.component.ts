@@ -99,15 +99,19 @@ export class ServiciosMobileComponent {
 			const yDiff = this.yDown! - yUp;
 
 			if (yDiff > 0) {
+				/* onTouch bajo */
 				if (this.index + 1 < this.lenght) {
 					this.nextIndex = this.index + 1;
+					this.indexService.setIndex(this.nextIndex);
 				} else {
 					return;
 				}
 				this.translate -= 100;
 			} else if (yDiff < 0) {
+				/* onTouch subo */
 				if (this.index - 1 >= 0) {
 					this.nextIndex = this.index - 1;
+					this.indexService.setIndex(this.nextIndex);
 				} else {
 					return;
 				}
