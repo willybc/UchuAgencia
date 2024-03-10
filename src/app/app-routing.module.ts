@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'servicios/nav', component: ServiciosNavComponent },
   { path: 'servicios/mobile', component: ServiciosMobileComponent },
   { path: 'loader', component: LoaderComponent },
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
