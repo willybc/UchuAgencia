@@ -16,6 +16,7 @@ import {
 } from 'src/app/utils/color';
 import { MAX_VIEWPORT_MOBILE } from 'src/app/utils/other';
 import { IndexService } from 'src/app/services/index.service';
+import { Contacto } from 'src/app/utils/Contacto';
 
 @Component({
 	selector: 'app-menu',
@@ -48,6 +49,10 @@ export class MenuComponent {
 		private menuService: MenuService,
 		private indexService: IndexService
 	) {}
+
+	goToWhatsapp() {
+		return Contacto.whatsapp;
+	}
 
 	checkResolution() {
 		if (window.innerWidth < 852) {

@@ -116,9 +116,25 @@
 	}
 }
 
-@media screen and (max-width: 1200px) and (min-width: 1024px) {
+@media screen and (max-width: 1200px) and (min-width: 1023px) {
 	.bottom-animation {
 		width: 105em;
+	}
+
+	.vision-top {
+		height: auto;
+
+		/* .up-container {
+			height: 75%
+		}
+
+		.down-container {
+			height: 25%;
+		} */
+	}
+
+	.bottom-animation {
+		padding: 3rem !important;
 	}
 }
 
