@@ -122,31 +122,40 @@ transform-origin: 0 0; /* see note above */
 box-sizing: content-box;
 }
 
-.container-loading img {
-    height: 70vh;
-}
-
 .container-loading video {
-	height: 70vh;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
 }
 
+.container-loading video source {
+	display: none;
+}
 @media screen and (max-width: 1200px) {
-    .container-loading img {
-        height: 60vh;
-    }
-
-	.container-loading video {
+	/* .container-loading video {
 		height: 60vh;
+	} */
+}
+
+@media screen and (min-width: 853px) {
+	video source[src*="assets/UCHU.gif"] {
+	  display: block;
 	}
 }
 
-@media screen and (max-width: 852px) {
-    .container-loading img {
-        height: 38vh;
+@media screen and (min-width: 853px) and (max-width: 1199px) {
+    .container-loading video source[src*="assets/uchu_tablet.mp4"] {
+        display: block;
     }
+}
 
-	.container-loading video {
+@media screen and (max-width: 852px) {
+
+	/* .container-loading video {
 		height: 38vh;
+	} */
+	.container-loading video source[src*="assets/uchu-mobile.mp4"] {
+		display: block;
 	}
 }
 

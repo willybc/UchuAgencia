@@ -14,10 +14,15 @@
 		<app-root>
 			<div class="container-loading">
 				<video autoplay playsinline muted loop (click)="toggleVideo()" >
-					<source src="assets/uchu3.mp4" />
+					<source src="assets/uchu_desktop.mp4" media="(min-width: 1200px)">
+					<source src="assets/uchu_tablet.mp4" media="(min-width: 853px) and (max-width: 1199px)">
+					<source src="assets/uchu_mobile.mp4" media="(max-width: 852px)">
+					
 					Browser not supported
 				</video>
-				<!-- <img id="loading-gif" src="assets/UCHU.gif" alt="" /> -->
+
+				<!-- <img src="assets/UCHU_1920.gif" alt="" class="loading-image large-screen" /> -->
+
 			</div>
 		</app-root>
 	</body>

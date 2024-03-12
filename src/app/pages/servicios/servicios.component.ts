@@ -141,7 +141,7 @@ export class ServiciosComponent {
 			if (e.deltaY > 0) {
 				/* scroll up */
 				if (this.index + 1 <= this.lenght) {
-					if(this.index == 3) {
+					if(this.index == 3 && window.innerWidth < 852) {
 						return;
 					}
 					this.nextIndex = this.index + 1;
@@ -151,6 +151,7 @@ export class ServiciosComponent {
 				}
 			} else if (e.deltaY < 0) {
 				/* scroll down */
+				
 				if (this.index - 1 >= 0) {
 					this.nextIndex = this.index - 1;
 					this.indexService.setIndexService(this.nextIndex);
@@ -249,9 +250,12 @@ export class ServiciosComponent {
 		if (this.index != index) {
 			this.setProperties(index);
 
+			console.log("voy a ", index)
+
 			this.nextIndex = index;
 			this.circleService.setProperties(this.linksColor, index);
 			this.changeSection(index);
+
 		}
 	}
 
