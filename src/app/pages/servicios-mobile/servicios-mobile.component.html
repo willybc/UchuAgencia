@@ -5,7 +5,7 @@
 		*ngFor="let service of servicesContent; let i = index"
 		[ngClass]="isEven(i) ? 'black' : 'white'">
 		<div class="service-mobile-text">
-			<h1 [ngStyle]="{ color: serviceColor(i) }">{{ service.title }}</h1>
+			<h1 (click)="goToService(i)" [ngStyle]="{ color: serviceColor(i) }">{{ service.title }}</h1>
 			<div class="subtitle">
 				<h2 [ngStyle]="{ color: linksColor }">Servicio</h2>
 				<p [ngStyle]="{ color: serviceColor(i) }">▬ 0{{ i + 1 }}</p>

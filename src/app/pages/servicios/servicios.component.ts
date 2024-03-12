@@ -249,9 +249,6 @@ export class ServiciosComponent {
 	manualChange(index: number) {
 		if (this.index != index) {
 			this.setProperties(index);
-
-			console.log("voy a ", index)
-
 			this.nextIndex = index;
 			this.circleService.setProperties(this.linksColor, index);
 			this.changeSection(index);
@@ -339,6 +336,10 @@ export class ServiciosComponent {
 	goBackToParentSection(index: number) {
 		this.navService.setPadreSectionNavigate(index);
 		this.router.navigate(['/servicios/mobile']);
+	  }
+
+	  prueba(){
+		console.log("entro")
 	  }
 
 	  goBackService(index: number) {

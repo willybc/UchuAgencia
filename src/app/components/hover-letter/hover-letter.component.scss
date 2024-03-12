@@ -103,6 +103,10 @@
 
 
 @media (max-width: 852px) {
+	.shapes {
+		display: none;
+	}
+
 	.content-left {
 		height: 50%;
 	}
