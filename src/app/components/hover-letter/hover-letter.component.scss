@@ -91,7 +91,8 @@
 .background {
 	width: 14%;
 	height: 100%;
-	background-color: linear-gradient(to right, var(--primary-light) 0%, var(--primary-light) 50%, var(--primary-dark) 50%, var(--primary-dark) 100%);
+	background: var(--primary-dark);
+	/* background-color: linear-gradient(to right, var(--primary-light) 0%, var(--primary-light) 50%, var(--primary-dark) 50%, var(--primary-dark) 100%); */
 }
 
 @media screen and (max-width: 1023px) {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ElementRef } from '@angular/core';
 import { TransitionService } from 'src/app/services/transition.service';
 import { PrimaryColor, SecondaryColor } from 'src/app/utils/color';
 import gsap from 'gsap';
@@ -16,7 +16,28 @@ export class HoverLetterComponent implements OnDestroy {
 	dark = PrimaryColor.Dark;
 	yellow = SecondaryColor.Yellow;
 
-	constructor(private transService: TransitionService) {}
+	previewWidth: number;
+
+	constructor(
+		private transService: TransitionService,
+		private elementRef: ElementRef) {
+			this.previewWidth = window.innerWidth;
+		}
+
+	ngOnInit() {
+		window.addEventListener('resize', () => {
+			this.checkWindowWidth();
+		});
+	}
+
+	private checkWindowWidth() {
+		const background = this.elementRef.nativeElement.querySelector('.background-container');
+		const currentWidth = window.innerWidth;
+		
+		if (currentWidth > this.previewWidth && currentWidth > 1024) {
+        background.style.display = 'none';
+    }
+	  }
 
 	ngAfterViewInit() {
 		if (window.innerWidth > MAX_VIEWPORT_MOBILE) {
@@ -26,6 +47,7 @@ export class HoverLetterComponent implements OnDestroy {
 
 	ngOnDestroy() {
 		document.body.removeEventListener('mousemove', this.handleMouseMove);
+		window.removeEventListener('resize', this.checkWindowWidth);
 	}
 
 	hoverLetterAnimation() {
