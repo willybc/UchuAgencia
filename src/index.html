@@ -13,7 +13,8 @@
 	<body>
 		<app-root>
 			<div class="container-loading">
-				<video autoplay muted loop playsinline (click)="toggleVideo()" >
+				<!-- se quito loop, para pruebas -->
+				<video autoplay muted playsinline (click)="toggleVideo()" >
 					<source src="assets/uchu_desktop.mp4" media="(min-width: 1200px)">
 					<source src="assets/uchu_tablet.mp4" media="(min-width: 853px) and (max-width: 1199px)">
 					<source src="assets/uchu_mobile.mp4" media="(max-width: 852px)">

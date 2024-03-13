@@ -5,6 +5,7 @@
 	z-index: 0;
 	width: 100vw;
 	height: 100vh;
+	height: 100svh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -72,7 +73,7 @@
 	}
 
 	.morph {
-		width: 60%;
+		width: 50%;
 		margin-bottom: 2rem;
 	}
 }
@@ -89,4 +90,8 @@
 .projected-content {
 	position: absolute;
 	z-index: 3;
+}
+
+@media screen and (max-width: 852px) {
+
 }
