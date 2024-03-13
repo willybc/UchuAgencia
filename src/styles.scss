@@ -132,6 +132,13 @@ box-sizing: content-box;
 .container-loading video source {
 	display: none;
 }
+
+.container-loading img {
+	display: none;
+	width: 100%;
+	height: auto;
+}
+
 /* @media screen and (max-width: 1200px) {
 	.container-loading video {
 		height: 60vh;
@@ -155,8 +162,14 @@ box-sizing: content-box;
 	/* .container-loading video {
 		height: 38vh;
 	} */
-	.container-loading video source[src*="assets/uchu-mobile.mp4"] {
+	/* .container-loading video source[src*="assets/uchu-mobile.mp4"] {
 		display: block;
+	} */
+	.container-loading img {
+		display: block;
+		object-fit: cover;
+		position: absolute;
+		left: 0;
 	}
 }
 
