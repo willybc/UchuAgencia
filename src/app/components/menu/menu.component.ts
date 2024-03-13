@@ -54,6 +54,14 @@ export class MenuComponent {
 		return Contacto.whatsapp;
 	}
 
+	goToIGPage() {
+		return Contacto.instagram;
+	}
+
+	goToLNPage() {
+		return Contacto.linkedin;
+	}
+
 	checkResolution() {
 		if (window.innerWidth < 852) {
 			this.spanColor = PrimaryColor.Dark;
