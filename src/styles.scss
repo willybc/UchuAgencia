@@ -165,7 +165,8 @@ box-sizing: content-box;
 	/* .container-loading video source[src*="assets/uchu-mobile.mp4"] {
 		display: block;
 	} */
-	.container-loading img {
+	.container-loading .loading-img {
+		height: 100%;
 		display: block;
 		object-fit: cover;
 		position: absolute;
