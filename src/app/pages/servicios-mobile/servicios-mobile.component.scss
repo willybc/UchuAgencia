@@ -76,8 +76,12 @@ h1 {
 	width: 9%;
 }
 
-@media (max-width: 852px) {
-	/* .arrow path {
-		fill: var(--yellow) !important;
-	} */
+@media only screen and (max-device-width: 852px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+	.arrow {
+		position: absolute;
+		bottom: 31%;
+		left: 46%;
+		transform: translateY(-50%) rotate(-90deg);
+		width: 9%;
+	}
 }

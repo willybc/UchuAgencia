@@ -129,6 +129,7 @@
     .content-left {
         top: 0;
         bottom: auto;
+		mix-blend-mode: inherit;
 
 		h1 {
 			font-size: 12vw;
@@ -138,10 +139,6 @@
 			display: flex;
 			height: 40%;
 			align-items: flex-end;
-		}
-
-		.container-vision-mobile h1 {
-			z-index: 5000;
 		}
     }
 
