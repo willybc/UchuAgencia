@@ -76,6 +76,26 @@ h1 {
 	width: 9%;
 }
 
+.scroll-svg {
+	display: none;
+	position: absolute;
+	bottom: 7%;
+	left: 41%;
+	width: 20%;
+}
+
+@media screen and (max-width: 852px) and (orientation: portrait) {
+	.scroll-svg {
+		display: block;
+	}
+}
+
+@media screen and (max-height: 736px) {
+	.scroll-svg {
+		bottom: 4%;
+	}
+}
+
 @media only screen and (max-device-width: 852px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
 	.arrow {
 		position: absolute;
@@ -83,5 +103,9 @@ h1 {
 		left: 46%;
 		transform: translateY(-50%) rotate(-90deg);
 		width: 9%;
+	}
+
+	.scroll-svg {
+		bottom: 8%;
 	}
 }
