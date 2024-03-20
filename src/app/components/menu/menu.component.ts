@@ -78,7 +78,7 @@ export class MenuComponent {
 		});
 		this.rootURL = this.location.path();
 
-		console.log('antes ejecutar service', this.spanColor);
+		/* console.log('antes ejecutar service', this.spanColor); */
 		this.linksService.rightColor$.subscribe(color => {
 			this.spanColor = color;
 		});
@@ -150,7 +150,7 @@ export class MenuComponent {
 			// Ejecuta la animación de cerrar
 			this.animateCerrarMenu(() => {
 				// Después de la animación, cambia el color del menú
-				console.log(this.rootURL);
+				/* console.log(this.rootURL); */
 				if (this.rootURL === '/vision') {
 					this.linksService.changeRightColor(PrimaryColor.Light);
 					this.linksService.changeLeftColor(PrimaryColor.Light);
@@ -168,7 +168,7 @@ export class MenuComponent {
 				}
 				else if (this.rootURL === '/servicios' && window.innerWidth < 852) {
 					const currentIndexService = this.indexService.getIndexService();
-					console.log("entre en servicios", currentIndexService);
+					/* console.log("entre en servicios", currentIndexService); */
 					if (currentIndexService === 0 || currentIndexService === 2 || currentIndexService === 4) {
 						this.linksService.changeRightColor(PrimaryColor.Light);
 						this.linksService.changeLeftColor(PrimaryColor.Light);

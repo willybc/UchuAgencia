@@ -22,7 +22,7 @@ export class NewsletterPopupComponent {
 
 	subscribe() {
 		// Aquí puedes implementar la lógica para suscribir al usuario
-		console.log('Correo electrónico:', this.email);
+		/* console.log('Correo electrónico:', this.email); */
 		this.closePopup();
 	}
 }

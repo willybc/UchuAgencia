@@ -52,11 +52,11 @@ export class ServiciosMobileComponent {
 			if (index != null) {
 				this.index = index;
 				this.indexService.setIndex(this.index);
-				console.log('volvio al PADRE', index);
+				/* console.log('volvio al PADRE', index); */
 				this.navigate(index);
 				this.setColor(index);
 			} else {
-				console.log('index es null');
+				/* console.log('index es null'); */
 			}
 		});
 	}
@@ -139,7 +139,7 @@ export class ServiciosMobileComponent {
 	}
 
 	setColor(i: number) {
-		console.log('entre al index del hijo con', i);
+		/* console.log('entre al index del hijo con', i); */
 		if (this.isEven(i)) {
 			this.linksColor = PrimaryColor.Light;
 			this.logoColor = '#030202';

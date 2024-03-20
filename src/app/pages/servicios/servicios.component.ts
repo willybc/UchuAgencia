@@ -79,7 +79,7 @@ export class ServiciosComponent {
 
 		this.navService.changeSectionNavigate.subscribe(index => {
 			if (index != null) {
-				console.log("HIJO, 81", index) 
+				/* console.log("HIJO, 81", index)  */
 				this.indexService.setIndexService(index);
 				this.navigate(index);
 			}
@@ -339,7 +339,7 @@ export class ServiciosComponent {
 	  }
 
 	  prueba(){
-		console.log("entro")
+		/* console.log("entro") */
 	  }
 
 	  goBackService(index: number) {

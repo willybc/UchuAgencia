@@ -63,7 +63,7 @@
 	aspect-ratio: 1 / 1;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px){
 	.main-circle {
 		width: 100%;
 	}
@@ -73,7 +73,7 @@
 	}
 
 	.morph {
-		width: 50%;
+		width: 35%;
 		margin-bottom: 2rem;
 	}
 }
@@ -92,6 +92,14 @@
 	z-index: 3;
 }
 
-@media screen and (max-width: 852px) {
+@media screen and (max-width: 852px) and (min-width: 750px) {
+	.morph {
+		width: 40%;
+	}
+} 
 
+@media screen and (max-width: 750px) {
+	.morph {
+		width: 50%;
+	}
 }
