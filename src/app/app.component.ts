@@ -9,9 +9,9 @@ import { SeoService } from './services/seo.service';
 export class AppComponent {
 	constructor(private seoService: SeoService) {
 		this.seoService.setMetaTags(
-			'Uchu',
+			'Uchu Agencia',
 			'Somos una agencia especializada en comunicación y diseño. *El camino para alcanzar tus metas*',
-			'agencia, comunicación, diseño, marketing, branding, estrategia, uchu, uchuagencia'
+			'agencia, comunicación, diseño, marketing, branding, estrategia, uchu, uchuagencia, relaciones públicas, campañas publicitarias, eventos corporativos'
 		)
 	}
 }
