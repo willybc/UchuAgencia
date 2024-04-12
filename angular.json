@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"hold": {
+		"UchuAgencia": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -17,7 +17,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/hold",
+						"outputPath": "dist/UchuAgencia",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": ["zone.js"],
@@ -58,10 +58,10 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "hold:build:production"
+							"browserTarget": "UchuAgencia:build:production"
 						},
 						"development": {
-							"browserTarget": "hold:build:development"
+							"browserTarget": "UchuAgencia:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
@@ -69,7 +69,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "hold:build"
+						"browserTarget": "UchuAgencia:build"
 					}
 				},
 				"test": {
