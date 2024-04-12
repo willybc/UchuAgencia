@@ -25,6 +25,7 @@ import { ServiciosMobileComponent } from './pages/servicios-mobile/servicios-mob
 import { ConfigService } from './services/config.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { NewsletterPopupComponent } from './components/newsletter-popup/newsletter-popup.component';
+import { SeoService } from './services/seo.service';
 
 export function LoadConfiguration(configService: ConfigService) {
   return () => configService.load();
@@ -51,6 +52,7 @@ export function LoadConfiguration(configService: ConfigService) {
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule],
   providers: [
+    SeoService,
     ConfigService,
     {
       provide: APP_INITIALIZER,

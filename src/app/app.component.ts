@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SeoService } from './services/seo.service';
 
 @Component({
 	selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-	constructor() {}
+	constructor(private seoService: SeoService) {
+		this.seoService.setMetaTags(
+			'Uchu',
+			'Somos una agencia especializada en comunicación y diseño. *El camino para alcanzar tus metas*',
+			'agencia, comunicación, diseño, marketing, branding, estrategia, uchu, uchuagencia'
+		)
+	}
 }
