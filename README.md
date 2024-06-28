@@ -1,6 +1,6 @@
 # UchuAgencia
 
-![image](https://github.com/willybc/uchu/assets/22482325/cbfb2988-f88d-4512-a0d6-45efa53aae48)
+![327623195-cbfb2988-f88d-4512-a0d6-45efa53aae48](https://github.com/willybc/uchu/assets/22482325/1560d177-936a-453f-8a07-4eaa3aaad14b)
 
 ## Demo
 
